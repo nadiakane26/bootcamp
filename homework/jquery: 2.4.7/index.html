@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+		<style>
+		    .move{
+		        height: 50px;
+		        width: 15%;
+		        border:solid 1px black;
+		        background-color:gray;
+		        margin:5px;
+		        position:relative;
+		        color:white;
+		    }
+		    #container
+		    {
+		        display:flex;
+		    }
+		</style>
+	</head>
+
+	<body>
+        <div id = container>
+            <div class = move id = div1></div>
+            <div class = move id = div2></div>
+            <div class = move id = div3></div>
+            <div class = move id = div4></div>
+            <div class = move id = div5></div>
+            <div class = move id = div6></div>
+            <div class = move id = div7></div>
+            <div class = move id = div8></div>
+        </div>
+        <script>
+            // Runs when the browser (DOM) if fully loaded
+            $(document).ready(function(){
+                const divs = $(".move"); //Selects all div elements with the class move as ajQuery object.
+                let i = 0;
+                
+                function divWave(){
+                if (i < divs.length){
+                    
+                    // Selects the i-th div element to run in line 50
+                    const $div = $(divs[i]);
+                    
+                    //This will grab the height of the window of the browser
+                    var HEIGHT = $(window).height();
+                    
+                /* Div reaches to the bottom of the window,
+                and then returns to its original position */
+                $div.animate({top: HEIGHT}, "slow", function(){
+                    $div.animate({top: "0px"}, "slow", function(){
+                        i++;
+                        setTimeout(divWave, 5.3)
+                        
+                        /*setInterval drops after the second div, it executes a function at specified intervals regardless of 
+                        whether the previous animation has finished, leading to unpredictable behavior. setTimeout works as expected, div's animations occurs sequentially such that
+                        the next animation starts after the current animation completes*/
+                    });
+                });
+                
+            };
+           
+        };
+        
+        divWave();
+            });            
+                    
+                
+           
+            
+        </script>
+	</body>
+</html>
