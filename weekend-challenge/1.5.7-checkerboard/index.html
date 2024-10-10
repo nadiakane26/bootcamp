@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                display:flex;
+                flex-wrap: wrap;
+            }
+        </style>
+    </head>
+	<body>
+	
+	<script>  
+
+        var spaces = 7; // 7x7 board
+        var width = 100 / spaces + "%"; // Calculate the width of each div based on screen width as a percentage
+        var height = "60px"; // Set a fixed height of 60px for each div
+    
+        // Create and add each div for the checkerboard
+        for (var i = 0; i < spaces*spaces; i++) {
+            var square = document.createElement("div"); // Create a new div
+    
+            // Set width and height
+            square.style.width = width;
+            square.style.height = height;
+            
+            // Determine the color
+            
+            // Color is based on whether the sum of the row and column indices is even or odd.
+            // Squares in even-numbered rows and columns are the same color
+            if (i % 2 === 0) {
+                square.style.backgroundColor = "black"; // Even rows and even columns or odd rows and odd columns are black
+            } else {
+                square.style.backgroundColor = "red"; // Other squares are red
+            }
+    
+            // Append the square to the body
+            document.body.appendChild(square);
+            
+        }
+	</script>
+	</body>
+</html>
