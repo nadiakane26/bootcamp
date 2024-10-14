@@ -5,6 +5,7 @@ body {
     line-height: 1.6; /*Spacing between lines. Using the standard recommended */
     display: flex; /* Layout */
 }
+
 h1, h2, h3 {
     color: #2c3e50;
 }
@@ -114,6 +115,11 @@ img {
     position: relative;
 }
 
+.main-content{
+    width: 800px;
+    text-align: justify; 
+}
+
 /* Section: Experiences, Education, Publications, Project */
 .section {
     border-bottom: 1px solid #2c3e50; /* Line below name */}
@@ -136,59 +142,61 @@ img {
 .toggle-icon {
     font-size: 12px;
 }
-.main-content{
-    width: 800px;
-    text-align: justify; 
-}
 
 /* Info Icon */
-
 .header-info-icon {
     display: flex;
     align-items: center; /* Vertically aligns icon and header */
     position: relative; 
 }
 
-.info-icon {
-    width: 15px; /* Adjust icon size */
+.header-info-icon img {
+    width: 15px; /* Adjust icon size as needed */
     height: 15px;
-    margin-left: 5px;
-    margin-top: 5px;
+    cursor: pointer; 
 }
 
-.tooltip {
-    visibility: hidden; 
-    background-color: white; 
-    text-align: center; 
-    padding: 5px; 
-    border-radius: 5px; 
-    position: absolute; /* Position relative to the parent */
-    z-index: 1; 
-    left: 20%; /* Position to the right of the icon with a 10px space */
-    top: 50%; /* Align it to the top of the parent container */
-    transform: translateY(-50%); /* Center it vertically relative to the icon */
-    opacity: 0; 
-    transition: opacity 0.3s; 
-    font-size: 0.9em;
-    color: black;
-    border: 1px solid #2c3e50; 
-}
-
-/* Sidebar tooltip */
-.sidebar .tooltip {
-    left: 50%; /* Center the tooltip horizontally */
-    top: 50%; /* Align it to the top of the parent container */
-    transform: translateY(-50%); 
-    white-space: nowrap;
-}
-
-.info-icon:hover {
+.header-info-icon img:hover {
     filter: invert(50%); /* Half inversion to avoid complete disappearance */
 }
 
-.info-icon:hover + .tooltip {
-    visibility: visible; /* Show tooltip on hover */
-    opacity: 1; /* Make it fully opaque */
+/* Tooltip styles for each specific info icon */
+#hobbies:hover::after {
+    background-color: white;
+    content: "Hover over the icons to watch them move up and down!";
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 8px; /* Rounded corners */
+    white-space: nowrap;
+    position: absolute;
+    z-index:10;
+}
+
+#skills:hover::after {
+    background-color: white;
+    content: "Hard skills are measured in YEARS OF EXPERIENCE since completing undergraduate studies.";
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 8px; /* Rounded corners */
+    white-space: nowrap;
+    position: absolute;
+    z-index:10;
+}
+
+#experience:hover::after,
+#projects:hover::after
+{
+    background-color: white;
+    content: "Click the caret for more information about each role.";
+    color: black;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 8px; /* Rounded corners */
+    white-space: nowrap;
+    position: absolute;
+    z-index:10;
 }
 
 /*Publications*/
