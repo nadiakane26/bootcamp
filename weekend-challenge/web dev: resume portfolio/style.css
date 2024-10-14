@@ -189,7 +189,7 @@ img {
 #projects:hover::after
 {
     background-color: white;
-    content: "Click the caret for more information about each role.";
+    content: "Click the caret for more information.";
     color: black;
     padding: 5px;
     border: 1px solid black;
