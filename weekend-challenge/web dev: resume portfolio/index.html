@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,145 +8,152 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
+
 <body>
 
     <div class="sidebar">
         <!--Profile picture-->
-        <img src="https://media.licdn.com/dms/image/v2/D5603AQGNdtsQYtWugg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706103657675?e=1733961600&v=beta&t=eBK9ZkuGk7oKjCBsnWp7zSNpP4xjjxx41M4nS3tV1KM" width="150px" alt="Profile">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQGNdtsQYtWugg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706103657675?e=1733961600&v=beta&t=eBK9ZkuGk7oKjCBsnWp7zSNpP4xjjxx41M4nS3tV1KM"
+            width="150px" alt="Profile">
         <h2>Summary</h2>
         <!--Summary Paragraph-->
-        <p class = "summary">I hold a master's degree in biological sciences with a focus in computational biology from the University of Minnesota. My expertise involves leveraging Python, R, and Matlab to analyze and visualize complex biological datasets. I excel in communication and collaboration, making me an effective team player. My passion lies in applying my imaging and bioinformatics skills to drive forward scientific research.</p>
-        
+        <p class="summary">I hold a master's degree in biological sciences with a focus in computational biology from
+            the University of Minnesota. My expertise involves leveraging Python, R, and Matlab to analyze and visualize
+            complex biological datasets. I excel in communication and collaboration, making me an effective team player.
+            My passion lies in applying my imaging and bioinformatics skills to drive forward scientific research.</p>
+
         <!--The email, phone and locations are enabled such that... -->
         <h2>Contact Information</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <a href="mailto:nadia.kane26@gmail.com" target="_blank">
-                        <!--Right clicking the email icon allows you to Copy Email Address-->
-                        <img src="https://cdn-icons-png.flaticon.com/128/7887/7887710.png" alt="Email" class="contact-icon">
-                    </a>
-                    <span id="email-address">nadia.kane26@gmail.com</span>
-                </div>
-                
-                <div class="contact-item">
-                    <a href="tel:+16513159870">
-                        <!--Clicking the phone icon allows you to directly start a phone call-->
-                        <img src="https://cdn-icons-png.flaticon.com/128/597/597177.png" alt="Phone" class="contact-icon">
-                    </a>
-                    <span id="phone-number">(651) 315-9870</span>
-                </div>
-                <div class="contact-item">
-                    <a href="https://maps.app.goo.gl/6zJo1Y31cR2cY85GA" target="_blank">
-                        <!--Clicking the location icon takes you directly to Google Maps-->
-                        <img src="https://cdn-icons-png.flaticon.com/128/535/535188.png" alt="Location" class="contact-icon">
-                    </a>
-                    <span id="location">St.Paul, MN</span>
-                </div>
-
+        <div class="contact-info">
+            <div class="contact-item">
+                <a href="mailto:nadia.kane26@gmail.com" target="_blank">
+                    <!--Right clicking the email icon allows you to Copy Email Address-->
+                    <img src="https://cdn-icons-png.flaticon.com/128/7887/7887710.png" alt="Email" class="contact-icon">
+                </a>
+                <span id="email-address">nadia.kane26@gmail.com</span>
             </div>
-        
+
+            <div class="contact-item">
+                <a href="tel:+16513159870">
+                    <!--Clicking the phone icon allows you to directly start a phone call-->
+                    <img src="https://cdn-icons-png.flaticon.com/128/597/597177.png" alt="Phone" class="contact-icon">
+                </a>
+                <span id="phone-number">(651) 315-9870</span>
+            </div>
+            <div class="contact-item">
+                <a href="https://maps.app.goo.gl/6zJo1Y31cR2cY85GA" target="_blank">
+                    <!--Clicking the location icon takes you directly to Google Maps-->
+                    <img src="https://cdn-icons-png.flaticon.com/128/535/535188.png" alt="Location"
+                        class="contact-icon">
+                </a>
+                <span id="location">St.Paul, MN</span>
+            </div>
+
+        </div>
+
         <div class="social-links">
             <!--Social links are enabled to take you directly to my personal page for LinkedIn and Github, respectively.-->
             <a href="https://www.linkedin.com/in/nadia-kane-54727a1a9/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                    alt="LinkedIn">
             </a>
             <a href="https://github.com/nadiakane26" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
             </a>
         </div>
 
-        <div class="header-info-icon"> 
+        <div class="header-info-icon">
             <h2>Skills</h2>
             <span id="skills">
                 <img src="https://cdn-icons-png.flaticon.com/128/665/665049.png" alt="Info">
             </span>
         </div>
-        
+
         <div id="skill-container">
             <div class="skill">
                 <span class="skill-label">Python</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 50%;"></div> 
+                    <div class="progress" style="width: 50%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <span class="skill-label">R</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 50%;"></div> 
+                    <div class="progress" style="width: 50%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <span class="skill-label">Linux & Unix</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 33%;"></div> 
+                    <div class="progress" style="width: 33%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <span class="skill-label">Version Control</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 33%;"></div> 
+                    <div class="progress" style="width: 33%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <span class="skill-label">Matlab</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 17%;"></div> 
+                    <div class="progress" style="width: 17%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <span class="skill-label">HTML/CSS</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 17%;"></div> 
+                    <div class="progress" style="width: 17%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <span class="skill-label">JavaScript</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 17%;"></div> 
+                    <div class="progress" style="width: 17%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <span class="skill-label">HPC</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 17%;"></div> 
+                    <div class="progress" style="width: 17%;"></div>
                 </div>
             </div>
             <br> <!-- Break between hard and soft skills -->
             <div class="skill">
                 <span class="skill-label">Multitasking</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 100%;"></div> 
+                    <div class="progress" style="width: 100%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <span class="skill-label">Time-management</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 100%;"></div> 
+                    <div class="progress" style="width: 100%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <span class="skill-label">Organization</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 100%;"></div> 
+                    <div class="progress" style="width: 100%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <span class="skill-label">Customer Support</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 100%;"></div> 
+                    <div class="progress" style="width: 100%;"></div>
                 </div>
             </div>
             <div class="skill">
                 <span class="skill-label">Communication</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 100%;"></div> 
+                    <div class="progress" style="width: 100%;"></div>
                 </div>
             </div>
             <br> <!-- Break between soft skills and language skills -->
             <div class="skill">
                 <span class="skill-label">Mandarin</span>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 100%;"></div> 
+                    <div class="progress" style="width: 100%;"></div>
                 </div>
             </div>
             <div class="skill">
@@ -155,28 +163,28 @@
                 </div>
             </div>
         </div>
-        <div class="header-info-icon"> 
+        <div class="header-info-icon">
             <h2>Hobbies</h2>
             <span id="hobbies">
                 <img src="https://cdn-icons-png.flaticon.com/128/665/665049.png" alt="Info">
             </span>
+        </div>
+
+        <div class="hobbies">
+            <img src="https://cdn-icons-png.flaticon.com/128/10867/10867358.png" alt="Cycling">
+            <img src="https://cdn-icons-png.flaticon.com/128/1165/1165187.png" alt="Soccer">
+            <img src="https://cdn-icons-png.flaticon.com/128/10484/10484677.png" alt="History">
+            <img src="https://cdn-icons-png.flaticon.com/128/7503/7503792.png" alt="Hiking">
+        </div>
+
     </div>
 
-    	<div class = "hobbies">
-        	<img src="https://cdn-icons-png.flaticon.com/128/10867/10867358.png" alt = "Cycling">
-        	<img src="https://cdn-icons-png.flaticon.com/128/1165/1165187.png" alt = "Soccer">
-        	<img src="https://cdn-icons-png.flaticon.com/128/10484/10484677.png" alt = "History">
-        	<img src="https://cdn-icons-png.flaticon.com/128/7503/7503792.png" alt = "Hiking">
-    	</div>
-    	
-    </div>
-        
 
-    <div class = "main-content">
+    <div class="main-content">
         <h1>Nadia Kane</h1>
 
         <div class="section">
-            <div class="header-info-icon"> 
+            <div class="header-info-icon">
                 <h2>Experience</h2>
                 <span id="experience">
                     <img src="https://cdn-icons-png.flaticon.com/128/665/665049.png" alt="Info">
@@ -184,182 +192,224 @@
             </div>
 
             <h3 class="section-title">Imaging Specialist
-              <span class="toggle-icon">▲</span>
-              <span class = "section-date">10/2019 – 06/2023</span>
+                <span class="toggle-icon">▲</span>
+                <span class="section-date">10/2019 – 06/2023</span>
             </h3>
-             <p>University of Minnesota University Imaging Centers | Minneapolis, MN</p>
+            <p>University of Minnesota University Imaging Centers | Minneapolis, MN</p>
 
             <div class="section-desc">
                 <ul>
-                    <li>Collaborated with 70+ researchers across 30+ departments at the shared research facility in conducting multidimensional and automated cellular imaging experiments using Nikon microscopy instruments (TiE, A1R, A1RMP, AXR, C2).</li>
-                    <li>Trained and mentored researchers in the use of Nikon instruments and Imaging software (NIS Elements, FIJI, and Imaris).</li>
-                    <li>Troubleshot complex microscopy issues for clients, such as optimizing imaging parameters to obtain higher resolution images at high speed.</li>
-                    <li>Led tissue clearing services to 35 internal and external clients in sample preparation (including antibody validation and labeling), 3D imaging, image processing, and 3D visualization.</li>
-                    <li>Optimized a sample inventory using Google Sheets and Benchling Electronic Lab Notebook, resulting in better tracking of samples and improved reproducibility.</li>
-                    <li>Repurposed a Leica TP automated tissue processor for tissue clearing by assisting with the design of mouse brain holder, shortening the X-CLARITY buffer wash periods by 62% (2.5 days).</li>
-                    <li>Stayed up-to-date on the latest tissue clearing advancements and technologies, presented UIC Clearing Services Webinars (2020 and 2021).</li>
-                    <li>Created new Standard Operating Procedure manuals for Nikon imaging workflows, resulting in improved efficiency.</li>
+                    <li>Collaborated with 70+ researchers across 30+ departments at the shared research facility in
+                        conducting multidimensional and automated cellular imaging experiments using Nikon microscopy
+                        instruments (TiE, A1R, A1RMP, AXR, C2).</li>
+                    <li>Trained and mentored researchers in the use of Nikon instruments and Imaging software (NIS
+                        Elements, FIJI, and Imaris).</li>
+                    <li>Troubleshot complex microscopy issues for clients, such as optimizing imaging parameters to
+                        obtain higher resolution images at high speed.</li>
+                    <li>Led tissue clearing services to 35 internal and external clients in sample preparation
+                        (including antibody validation and labeling), 3D imaging, image processing, and 3D
+                        visualization.</li>
+                    <li>Optimized a sample inventory using Google Sheets and Benchling Electronic Lab Notebook,
+                        resulting in better tracking of samples and improved reproducibility.</li>
+                    <li>Repurposed a Leica TP automated tissue processor for tissue clearing by assisting with the
+                        design of mouse brain holder, shortening the X-CLARITY buffer wash periods by 62% (2.5 days).
+                    </li>
+                    <li>Stayed up-to-date on the latest tissue clearing advancements and technologies, presented UIC
+                        Clearing Services Webinars (2020 and 2021).</li>
+                    <li>Created new Standard Operating Procedure manuals for Nikon imaging workflows, resulting in
+                        improved efficiency.</li>
                 </ul>
             </div>
-            
+
             <h3 class="section-title">Teaching Assistant (Online)
-            <span class="toggle-icon">▲</span>
-            <span class = "section-date">09/2021 – 08/2022</span>
+                <span class="toggle-icon">▲</span>
+                <span class="section-date">09/2021 – 08/2022</span>
             </h3>
             <p>Harbor Education | Beijing, China</p>
             <div class="section-desc">
-              <ul>
-                  <li>Taught and facilitated bilingual discussions in Introduction to Pharmaceutical Engineering & Drug Design, Stem Cell, Regenerative Medicine, and Biotechnology.</li>
-                  <li>Developed and presented supplemental lecture materials, held office hours.</li>
-              </ul>
+                <ul>
+                    <li>Taught and facilitated bilingual discussions in Introduction to Pharmaceutical Engineering &
+                        Drug Design, Stem Cell, Regenerative Medicine, and Biotechnology.</li>
+                    <li>Developed and presented supplemental lecture materials, held office hours.</li>
+                </ul>
             </div>
 
             <h3 class="section-title">Nursing Assistant
                 <span class="toggle-icon">▲</span>
-                <span class = "section-date">06/2015 - 06/2019</span>
+                <span class="section-date">06/2015 - 06/2019</span>
             </h3>
             <p>Fairview Health Services | Minneapolis, MN; Episcopal Homes of Minnesota | Saint Paul, MN</p>
             <div class="section-desc">
                 <ul>
-                    <li>Promoted patient health and overall wellness by assisting with daily living needs (bathing, dressing, toileting, shaving, oral hygiene, exercising) and serving meals, feeding, ambulating, turning, and positioning patients.</li>
-                    <li>Conducted routine checks on patient vitals, including blood pressure, blood sugar, and heart rate.</li>
+                    <li>Promoted patient health and overall wellness by assisting with daily living needs (bathing,
+                        dressing, toileting, shaving, oral hygiene, exercising) and serving meals, feeding, ambulating,
+                        turning, and positioning patients.</li>
+                    <li>Conducted routine checks on patient vitals, including blood pressure, blood sugar, and heart
+                        rate.</li>
                     <li>Utilized mobility devices and mechanical lift equipment for safe patient transport.</li>
-                    <li>Collected specimens, monitored and documented vitals, and reported changes to nursing staff.</li>
-                    <li>Responded to patient alarms and needs-assessment requests to determine the course of treatment.</li>
+                    <li>Collected specimens, monitored and documented vitals, and reported changes to nursing staff.
+                    </li>
+                    <li>Responded to patient alarms and needs-assessment requests to determine the course of treatment.
+                    </li>
                     <li>Documented patient information in charts and communicated status updates to charge nurses.</li>
                 </ul>
             </div>
-            
+
             <h3 class="section-title">Medical Assistant
-              <span class="toggle-icon">▲</span>
-              <span class = "section-date">01/2018 - 03/2019</span>
-            </h3> 
+                <span class="toggle-icon">▲</span>
+                <span class="section-date">01/2018 - 03/2019</span>
+            </h3>
             <p>University of Minnesota Cleft & Craniofacial Clinic | Minneapolis, MN</p>
-            <div class="section-desc">  
+            <div class="section-desc">
                 <ul>
-                    <li>Performed clerical tasks: dental photos, transcription, answering phones, scheduling appointments, greeting patients, and ordering supplies.</li>
-                    <li>Acted as a liaison among medical staff, relaying messages to facilitate treatment and deliver test results.</li>
-                    <li>Managed patient check-ins, verified demographic and insurance information, compiled forms, scheduled appointments, and updated files.</li>
+                    <li>Performed clerical tasks: dental photos, transcription, answering phones, scheduling
+                        appointments, greeting patients, and ordering supplies.</li>
+                    <li>Acted as a liaison among medical staff, relaying messages to facilitate treatment and deliver
+                        test results.</li>
+                    <li>Managed patient check-ins, verified demographic and insurance information, compiled forms,
+                        scheduled appointments, and updated files.</li>
                     <li>Organized charts, documents, and supplies to maintain team efficiency.</li>
-                    <li>Conducted health history interviews and current medical issues, explained the visit process.</li>
+                    <li>Conducted health history interviews and current medical issues, explained the visit process.
+                    </li>
                     <li>Care coordinated services with medical and office staff.</li>
-                    <li>Prepared exam rooms by sanitizing surfaces, restocking supplies, and sterilizing medical instruments.</li>
+                    <li>Prepared exam rooms by sanitizing surfaces, restocking supplies, and sterilizing medical
+                        instruments.</li>
                     <li>Compiled provider consultation notes and health histories into a well-documented report.</li>
                 </ul>
             </div>
         </div>
         <div class="section">
             <h2>Education</h2>
-                <h3>
-                    <strong>Full Stack Coding Bootcamp</strong>
-                    <span class="section-date">09/2024 - 02/2025</span>
-                </h3>
-                <p><em>New Vision Foundation</em></p>
-                <h3>
-                    <strong>Master of Biological Sciences</strong> 
-                    <span class="section-date">01/2020 - 05/2023</span>
-                </h3>
-                <p><em>University of Minnesota</em></p>
-            
-                <h3>
-                    <strong>Bachelor of Science</strong> 
-                    <span class="section-date">09/2013 - 12/2017</span>
-                </h3>
-                <p><em>University of Minnesota</em></p>
-            
-                
+            <h3>
+                <strong>Full Stack Coding Bootcamp</strong>
+                <span class="section-date">09/2024 - 02/2025</span>
+            </h3>
+            <p><em>New Vision Foundation</em></p>
+            <h3>
+                <strong>Master of Biological Sciences</strong>
+                <span class="section-date">01/2020 - 05/2023</span>
+            </h3>
+            <p><em>University of Minnesota</em></p>
+
+            <h3>
+                <strong>Bachelor of Science</strong>
+                <span class="section-date">09/2013 - 12/2017</span>
+            </h3>
+            <p><em>University of Minnesota</em></p>
+
+
         </div>
 
         <div class="section">
-            <div class="header-info-icon"> 
-            <h2>Projects</h2>
-            <span id="projects">
-                <img src="https://cdn-icons-png.flaticon.com/128/665/665049.png" alt="Info">
-            </span>
-        </div>
-            
-            <h3 class="section-title">Thesis: Exploring Deep Neural Network for Image Registration of Whole Mouse Brain Datasets: A Comparative Framework & Challenges with State-of-the-Art Methods   
-              <span class="toggle-icon">▲</span>
-              <span class = "section-date">09/2022-05/2023</span>
-            </h3> 
-            <div class="section-desc">  
+            <div class="header-info-icon">
+                <h2>Projects</h2>
+                <span id="projects">
+                    <img src="https://cdn-icons-png.flaticon.com/128/665/665049.png" alt="Info">
+                </span>
+            </div>
+
+            <h3 class="section-title">Thesis: Exploring Deep Neural Network for Image Registration of Whole Mouse Brain
+                Datasets: A Comparative Framework & Challenges with State-of-the-Art Methods
+                <span class="toggle-icon">▲</span>
+                <span class="section-date">09/2022-05/2023</span>
+            </h3>
+            <div class="section-desc">
                 <ul>
-                    <li>Conducted a systematic literature search on brain image registration algorithms using deep learning techniques.</li>
-                    <li>Explored the applications of open-source software VoxelMorph, SynthMorph, and EasyReg using the Command Line Interface. </li>
-                    <li>Developed synthetic datasets using Lab2im algorithm and evaluated the accuracy of ANTS baseline registration using similarity metrics (DICE, recall, and precision). </li>
-                    <li>Utilized a high-performance computing for setting up individual environments for algorithm testing and batch processing with SLURM job submissions in a Linux System.</li>
+                    <li>Conducted a systematic literature search on brain image registration algorithms using deep
+                        learning techniques.</li>
+                    <li>Explored the applications of open-source software VoxelMorph, SynthMorph, and EasyReg using the
+                        Command Line Interface. </li>
+                    <li>Developed synthetic datasets using Lab2im algorithm and evaluated the accuracy of ANTS baseline
+                        registration using similarity metrics (DICE, recall, and precision). </li>
+                    <li>Utilized a high-performance computing for setting up individual environments for algorithm
+                        testing and batch processing with SLURM job submissions in a Linux System.</li>
                 </ul>
             </div>
             <h3 class="section-title">Herbivory Tolerance in A. thaliana: A Poisson Regression Approach
                 <span class="toggle-icon">▲</span>
-                <span class = "section-date">04/2022 - 05/2022</span>
-            </h3> 
-            <div class="section-desc">  
+                <span class="section-date">04/2022 - 05/2022</span>
+            </h3>
+            <div class="section-desc">
                 <ul>
-                    <li>Studied herbivory effects on fitness and architecture in A. thaliana seed families, discovering that nutrient levels influenced plant tolerance to apical meristem damage and fruit production.</li>
-                    <li>Applied generalized linear model and Poisson regression, identifying overdispersion through diagnostic plots.</li>
-                    
+                    <li>Studied herbivory effects on fitness and architecture in A. thaliana seed families, discovering
+                        that nutrient levels influenced plant tolerance to apical meristem damage and fruit production.
+                    </li>
+                    <li>Applied generalized linear model and Poisson regression, identifying overdispersion through
+                        diagnostic plots.</li>
+
                 </ul>
             </div>
             <h3 class="section-title">Hidden Markov Model and Protein Secondary Structure Prediction
-              <span class="toggle-icon">▲</span>
-              <span class = "section-date">11/2021 - 12/2021</span>
-            </h3> 
-            <div class="section-desc">  
+                <span class="toggle-icon">▲</span>
+                <span class="section-date">11/2021 - 12/2021</span>
+            </h3>
+            <div class="section-desc">
                 <ul>
-                    <li>Applied Hidden Markov Models (HMMs) to protein secondary structure prediction by implementing and training HMMs using maximum likelihood learning and Baum-Welch algorithm.</li>
+                    <li>Applied Hidden Markov Models (HMMs) to protein secondary structure prediction by implementing
+                        and training HMMs using maximum likelihood learning and Baum-Welch algorithm.</li>
                 </ul>
             </div>
             <h3 class="section-title">Automated Image Analysis for Cell Detection and Quantification
-              <span class="toggle-icon">▲</span>
-              <span class = "section-date">11/2021 - 12/2021</span>
-            </h3> 
-            <div class="section-desc">  
+                <span class="toggle-icon">▲</span>
+                <span class="section-date">11/2021 - 12/2021</span>
+            </h3>
+            <div class="section-desc">
                 <ul>
-                    <li>Performed an image analysis workflow successfully to detect and quantify Babesiosis parasite infection in blood smear images using MATLAB toolboxes and interactive apps.</li>
-                    <li>Conducted pre-processing, thresholding, edge and shape detection, and property quantification using morphological operations to refine the binary mask.</li>
+                    <li>Performed an image analysis workflow successfully to detect and quantify Babesiosis parasite
+                        infection in blood smear images using MATLAB toolboxes and interactive apps.</li>
+                    <li>Conducted pre-processing, thresholding, edge and shape detection, and property quantification
+                        using morphological operations to refine the binary mask.</li>
                 </ul>
             </div>
-            <h3 class="section-title">Mouse Brain Spatial Transcriptomics  
-              <span class="toggle-icon">▲</span>
-              <span class = "section-date">04/2021 - 05/2021</span>
-            </h3> 
-            <div class="section-desc">  
+            <h3 class="section-title">Mouse Brain Spatial Transcriptomics
+                <span class="toggle-icon">▲</span>
+                <span class="section-date">04/2021 - 05/2021</span>
+            </h3>
+            <div class="section-desc">
                 <ul>
-                    <li>Used Seurat to analyze, visualize, and explore spatial transcriptomic data to study gene expression with a spatial context in tissues by visualizing using principal component analysis (PCA), clustering, and 3D Uniform Manifold Approximation (UMAP) to identify spatially variable features and integration with single-cell data.</li>
+                    <li>Used Seurat to analyze, visualize, and explore spatial transcriptomic data to study gene
+                        expression with a spatial context in tissues by visualizing using principal component analysis
+                        (PCA), clustering, and 3D Uniform Manifold Approximation (UMAP) to identify spatially variable
+                        features and integration with single-cell data.</li>
                 </ul>
             </div>
             <h3 class="section-title">Image Quality Assessment of 3D Tissue Cleared Dataset
-              <span class="toggle-icon">▲</span>
-              <span class = "section-date">11/2020 - 12/2020</span>
-            </h3> 
-            <div class="section-desc">  
+                <span class="toggle-icon">▲</span>
+                <span class="section-date">11/2020 - 12/2020</span>
+            </h3>
+            <div class="section-desc">
                 <ul>
-                    <li>Developed a python script to quickly assess image quality of a 3D-image stack using NumPy and scikit-image packages to perform basic image manipulation and processing in Jupyter Notebook.</li>
-                    <li>Generated quality control metrics for a non-standard small 3D-image stack dataset, including Signal-to-Noise Ratio (SNR), Dynamic Range, and Measurement of Transparency.</li>
-                    <li>Proposed optimization for larger datasets includes applying filters to random quadrants or down sampling the image and using machine learning to compare image quality metrics.</li>
+                    <li>Developed a python script to quickly assess image quality of a 3D-image stack using NumPy and
+                        scikit-image packages to perform basic image manipulation and processing in Jupyter Notebook.
+                    </li>
+                    <li>Generated quality control metrics for a non-standard small 3D-image stack dataset, including
+                        Signal-to-Noise Ratio (SNR), Dynamic Range, and Measurement of Transparency.</li>
+                    <li>Proposed optimization for larger datasets includes applying filters to random quadrants or down
+                        sampling the image and using machine learning to compare image quality metrics.</li>
                 </ul>
             </div>
         </div>
 
         <div class="section">
             <h2>Publications</h2>
-                <ul>
-                <li>Solhaug E, Roy R, Willey PT, Kane N, Carter C, Sanders MA. 
+            <ul>
+                <li>Solhaug E, Roy R, Willey PT, Kane N, Carter C, Sanders MA.
                     <a href="https://doi.org/10.1093/micmic/ozad067.499" target="_blank">
-                        An Optimized Optical Clearing Pipeline for Intact 3D Plant Imaging and Visualization of Fluorescent Probes.
+                        An Optimized Optical Clearing Pipeline for Intact 3D Plant Imaging and Visualization of
+                        Fluorescent Probes.
                     </a>
                     Microsc Microanal. 2023;29(29 Suppl 1):995-996. doi:10.1093/micmic/ozad067.499
                 </li>
                 <li>Kane N, Willey PT, Sanders MA.
                     <a href="https://doi.org/10.1093/micmic/ozad067.1084" target="_blank">
-                         Considerations for Tissue Clearing Services in a Shared Research Facility.
+                        Considerations for Tissue Clearing Services in a Shared Research Facility.
                     </a>
                     Microsc Microanal. 2023;29(Supplement_1):2094-2095. doi:10.1093/micmic/ozad067.1084
                 </li>
             </ul>
         </div>
     </div>
-    <script src = "resume-animations.js"></script>
+    <script src="resume-animations.js"></script>
 </body>
+
 </html>
