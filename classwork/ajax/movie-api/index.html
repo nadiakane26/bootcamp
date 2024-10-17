@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Movies</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="config.js"></script>
+</head>
+
+<body>
+    <h3>Enter a movie:</h3>
+    <input type="text" id="movie">
+    <button id="search">Search</button>
+    <h5 id="release-date"></h5>
+    <script>
+        
+        var URL = `https://www.omdbapi.com/?apikey=${apiKey}&t=`;
+
+        $("#search").click(function(){
+                var movie = $("#movie").val();
+
+                $.ajax({
+                   url: URL + movie,
+                   method: "GET", // Get request
+                   success: function(data){
+                    if(data.Response === "True"){
+                        $("#release-date").text("Release Date: " + data.Released);  
+                    } else {
+                        $("#release-date").text("Movie not found");
+                    }
+                   },
+                   error: function(xhr){
+                    var status = xhr.status;
+                    var errorMessage = xhr.responseJSON ? xhr.responseJSON.Error : "An unknown error occurred."
+                    $("#release-date").text(`Error retrieving movie data:  ${status}  -  ${errorMessage}`);
+                   } 
+                })
+            }); 
+
+    </script>
+</body>
+
+</html>
