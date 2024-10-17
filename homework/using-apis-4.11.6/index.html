@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movies</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <h3>Enter a movie:</h3>
+        <input type = "text" id = "movie">
+        <button id = "search">Search</button>
+        <h5 id = "release-date"></h5>
+        <script>
+            var URL = "https://static.codehs.com/api/12345/movies/all";
+            $("#search").click(function(){
+                var movie = $("#movie").val();
+                findReleaseDate(movie);
+            });
+      
+            function findReleaseDate(movie){
+               $.getJSON(URL, function(data){
+                   for(var i = 0; i < data.length; i++){
+                       console.log(data[i]["release-date"])
+                       // Check if the movie name matches the data
+                       if(movie === data[i].name){
+                           $("#release-date").text("Release Date: " + data[i]["release-date"]);
+                           return; //Exit after match is found
+                       }
+                       }
+                   
+                 // If no movie is found
+                   $("#release-date").text("Movie not found.");
+                   });
+                   
+            }
+        </script>
+    </body>
+</html>
