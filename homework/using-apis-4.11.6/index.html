@@ -33,6 +33,30 @@
                    });
                    
             }
+            
+
+            
+            // http://www.omdbapi.com/?apikey=[yourkey]&
+            // https://www.omdbapi.com/?t=Dr.+No&apikey=8baa88ba&
+            /*
+            var API_KEY = '8baa88ba';
+            var URL = `https://www.omdbapi.com/?apikey=${API_KEY}&t=`;
+            // console.log(URL);
+            
+            $("#search").click(function(){
+                var movie = $("#movie").val();
+                findReleaseDate(movie);
+            });
+            
+            function findReleaseDate(movie){
+               $.getJSON(URL + movie, function(data){
+                   //console.log(data);
+                   $("#release-date").text("Release Date: " + data.Released);
+                   
+               });
+            }
+            */
+            
         </script>
     </body>
 </html>
