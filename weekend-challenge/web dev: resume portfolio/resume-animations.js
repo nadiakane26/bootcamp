@@ -43,6 +43,6 @@ $("#theme-toggle").click(function () {
     element.classList.toggle("dark-mode");
 });
 
-// Last updated div with current date and time
+// Last updated div with date (manually)
 
-document.getElementById('last-updated-date').textContent = new Date().toLocaleString();
+document.getElementById('last-updated-date').textContent = "2024-10-20"
