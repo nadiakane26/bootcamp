@@ -1,20 +1,22 @@
 $(document).ready(function () {
+
     var URL;
+    const defaultCity = "Saint Paul"; // Default city to be displayed
+
+    // Set the API URL for the default city
+    URL = `https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${apiKey}&units=imperial`;
+    
+    // Display weather for the default city on page load
+    displayWeather(URL); 
 
     // Trigger search on search icon click
     $(".fa-search").click(function () {
-        var location = $("#location").val().trim(); // Get the input and trim spaces
+        var location = $("#location").val(); // Get the input and trim spaces
 
         // Validate the input first
         if (location === "") {
             $("#weather-info").text("Please enter a city name or zip code.");
             return;
-        }
-
-        // Validate zip code (it must be 5 digits)
-        if ($.isNumeric(location) && location.length !== 5) {
-            $("#weather-info").text("Please enter a valid 5-digit zip code.");
-            return; // Exit if it's not a valid zip code
         }
 
         // Generate the API URL based on input (zip code or city name)

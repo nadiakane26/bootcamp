@@ -10,47 +10,45 @@ body {
 }
 
 .container {
-    display: flex;
     flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center align items */
-    padding: 20px;
-    width:100;
 }
 
 .search-box {
-    position: relative; 
-    width: 100%; 
+    position: relative; /* For positioning the icon */
+    width: 100%; /* Full width */
+    max-width: 400px; /* Maximum width */
+}
 
 #location {
-    width: 100%; 
-    padding: 10px 40px; /
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    font-size: 16px; 
+    width: 100%; /* Full width of the search box */
+    padding: 10px 40px; /* Add padding for input and space for the icon */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Increase font size for better visibility */
 }
 
 .search-box i {
-    position: absolute; /
+    position: absolute; /* Position the icon */
     left: 10px; /* Position it inside the input */
-    top: 50%; 
+    top: 50%; /* Center it vertically */
     transform: translateY(-50%); /* Adjust vertical alignment */
-    color: #c4c4c4; 
+    color: #c4c4c4; /* Icon color */
     pointer-events: none; /* Prevent clicks on the icon */
-    font-size: 18px; 
+    font-size: 18px; /* Adjust size of the icon */
 }
 #date-time {
-    font-size: 20px;
-    margin: 10px 0; 
-    text-align: center; 
-    color: #333; 
+    font-size: 20px; /* Adjust size as needed */
+    margin: 10px 0; /* Space below the date/time */
+    text-align: left; /* Center text */
+    color: #333; /* Text color */
 }
 
 #weather-container {
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
-    width: 100%; 
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+    text-align: center; /* Center text within */
+    width: 100%; /* Ensure it takes full width */
 }
 #city-name {
     margin-top: 30px;
@@ -60,29 +58,45 @@ body {
 
 #weather-cond {
     font-size: 15px;
-    color: gray; 
+    color: gray; /* Gray color for weather condition */
     margin-top: 20px;
-    width: 100%; /
+    width: 100%; /* Ensure it takes the full width for proper centering */
 }
 
 #weather-icon img {
-    width: 150px; 
+    width: 150px; /* Adjust icon size */
     height: auto;
     text-align: center;
 }
 
 #weather-info {
-    display: flex; 
-    align-items: center; 
-    color: rgb(69, 69, 69); 
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-around; /* Evenly space items */
+    align-items: center; /* Vertically center items */
+    width: 100%; /* Full width of the container */
+    margin-top: 20px; /* Space above the weather info */
+}
+
+.weather-item {
+    display: flex; /* Use flexbox for each item */
+    flex-direction: column; /* Stack image and text vertically */
+    text-align: center; /* Center text */
+}
+
+.weather-item img {
+    width: 25px; /* Adjust image size */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 35px
+}
+
+#humidity, #wind-speed {
+    margin: 5px 0; /* Space below each text element */
+    color: rgb(69, 69, 69); /* Text color */
 }
 
 #temperature {
     font-size: 60px;
     text-align: center;
-    margin: 20px 50px;
-    transform: translateX(42%); /* Adjust horizontal alignment */
-    
 }
 
 #error-message {

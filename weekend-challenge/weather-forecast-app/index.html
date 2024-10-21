@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <h1> Weather App</h1>
     <div class="container">
+        <h1> Weather App</h1>
         <div class="search-box">
             <input type="text" id="location" placeholder="Enter location (city or zip code)">
             <i class="fas fa-search"></i> <!-- Search icon -->
@@ -24,10 +24,19 @@
             <img id="weather-icon" src="https://openweathermap.org/img/wn/01n@4x.png" alt="Weather Icon">
 
             <div id="weather-info">
-                <i class="fas fa-tint" id="humidity">67%</i>
-                <span id="temperature">69˚</span>
-                <i class="fas fa-wind" id="wind-speed">3.44 MPH</i>
+                <div class="weather-item">
+                    <img src="https://cdn-icons-png.flaticon.com/128/16350/16350734.png" alt="Humidity Icon">
+                    <p id="humidity">20%</p>
+                </div>
+                <div class="weather-item">
+                    <span id="temperature">69˚</span>
+                </div>
+                <div class="weather-item">
+                    <img src="https://cdn-icons-png.flaticon.com/128/959/959711.png" alt="Wind Speed Icon">
+                    <p id="wind-speed">40mph</p>
+                </div>
             </div>
+
         </div>
 
         <div id="error-message"></div>
