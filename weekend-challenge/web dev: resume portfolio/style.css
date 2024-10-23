@@ -299,7 +299,7 @@ img {
 }
 
 #experience:hover::after,
-#project:hover::after {
+#projects:hover::after {
     background-color: white;
     content: "Click the caret for more information about each role.";
     color: black;
