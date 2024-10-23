@@ -57,6 +57,12 @@ function displayWeather(URL) {
             
             // Set background gradient based on weather
             setBackgroundGradient(data.weather[0].main);
+
+            // Get the timezone offset from the API response
+            const timezoneOffset = data.timezone; // This is in seconds
+            
+            // Calculate and display the local time
+            displayLocalTime(timezoneOffset);
         },
         error: function (xhr) {
             var status = xhr.status;
@@ -81,17 +87,24 @@ function setBackgroundGradient(weatherMain) {
     document.body.style.backgroundImage = gradients[weatherMain];
 }
 
-// Need to work on adjusting time and date to the proper time zone
-function DateTime() {
-    const optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const optionsTime = { hour: '2-digit', minute: '2-digit', hour12: false }; // 24-hour format
+function displayLocalTime(offsetInSeconds) {
+    // Get the current UTC time
+    const utcNow = new Date();
 
-    const now = new Date();
-    const date = now.toLocaleDateString(undefined, optionsDate);
-    const time = now.toLocaleTimeString(undefined, optionsTime);
+    // Convert offset from seconds to milliseconds
+    const offsetInMilliseconds = offsetInSeconds * 1000; // Correct conversion
 
+    // Create a new Date object for the local time
+    const localTime = new Date(utcNow.getTime() + offsetInMilliseconds);
+
+    // Format date and time separately
+    const date = localTime.toUTCString().split(' ').slice(0, 4).join(' ');  // Extract "Tue, 22 Oct 2024"
+    
+    // toLocaleString outputs the wrong
+    // Extract hours and minutes only
+    const time = localTime.toISOString().slice(11,16);
+    
     // Update the date and time display
     document.getElementById('date-time').innerHTML = `${date}<br>${time}`;
 }
 
-DateTime();
