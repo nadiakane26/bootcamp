@@ -1,7 +1,8 @@
 // Default Saint Paul to be displayed
 $(document).ready(function () {
 
-    var URL;
+    var currentURL;
+    var extendedURL;
     const defaultCity = "Saint Paul"; 
 
     // Set the API URL for the default city
@@ -21,9 +22,13 @@ $(document).ready(function () {
 
         // Generate the API URL based on input (zip code or city name)
         if ($.isNumeric(location)) { // If it's a numeric input (zip code)
-            URL = `https://api.openweathermap.org/data/2.5/weather?zip=${location}&appid=${apiKey}&units=imperial`;
+            currentURL = `https://api.openweathermap.org/data/2.5/weather?zip=${location}&appid=${apiKey}&units=imperial`;
+            extendedURL = `https://api.openweathermap.org/data/2.5/forecast?zip=${location}&appid=${apiKey}&units=imperial`;
+
         } else { // Assume it's a city name
-            URL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=imperial`;
+            currentURL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=imperial`;
+            extendedURL = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=imperial`;
+
         }
         displayWeather(URL); // 
     });
@@ -38,11 +43,12 @@ $(document).ready(function () {
 
 function displayWeather(URL) {
     $.ajax({
-        url: URL,
+        url: currentURL,
         method: 'GET',
         success: function (data) {
+            
             // Display the city name
-            $("#location-name").text(`${data.name}`); 
+            $("#location-name").text(`${data.name},${data.sys.country}`); 
 
             // Update weather info
             $("#temperature").text(`${data.main.temp.toFixed(0)}˚`); // Round the temperature
@@ -63,6 +69,36 @@ function displayWeather(URL) {
             
             // Calculate and display the local time
             displayLocalTime(timezoneOffset);
+        },
+        error: function (xhr) {
+            var status = xhr.status;
+            var errorMessage = xhr.responseJSON ? xhr.responseJSON.message : "An unknown error occurred.";
+            $("#error-message").text(`Error retrieving weather data: ${status} - ${errorMessage}`);
+        }
+    });
+}
+
+function displayWeather(URL) {
+    $.ajax({
+        url: extendedURL,
+        method: 'GET',
+        success: function (data) {
+            console.log
+            
+            // Display the city name
+            $("#location-name").text(`${data.name},${data.sys.country}`); 
+
+            // Update weather info
+            $("#temperature").text(`${data.main.temp.toFixed(0)}˚`); // Round the temperature
+            $("#weather-cond").text(`${data.weather[0].main}: ${data.weather[0].description}`);
+            $("#humidity").text(`${data.main.humidity}%`);
+            $("#wind-speed").text(`${data.wind.speed} mph`);
+
+            // Using the weather icons from OpenWeather API
+            const icon = data.weather[0].icon;
+            const iconSrc = `https://openweathermap.org/img/wn/${icon}@4x.png`;  // URL for the icon
+            $("#weather-icon").attr("src", iconSrc); // Set the icon and show it
+             
         },
         error: function (xhr) {
             var status = xhr.status;
@@ -107,3 +143,4 @@ function displayLocalTime(offsetInSeconds) {
     // Update the date and time display
     document.getElementById('date-time').innerHTML = `${date}<br>${time}`;
 }
+

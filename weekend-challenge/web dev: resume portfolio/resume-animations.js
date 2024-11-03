@@ -45,4 +45,4 @@ $("#theme-toggle").click(function () {
 
 // Last updated div with date (manually)
 
-document.getElementById('last-updated-date').textContent = "2024-10-20"
+document.getElementById('last-updated-date').textContent = "2024-10-23"

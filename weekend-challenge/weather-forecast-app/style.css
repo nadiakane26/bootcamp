@@ -50,7 +50,7 @@ body {
     text-align: center; /* Center text within */
     width: 100%; /* Ensure it takes full width */
 }
-#city-name {
+#location-name {
     margin-top: 30px;
     font-size: 50px;
     text-align: center;
