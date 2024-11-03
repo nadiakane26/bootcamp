@@ -1,41 +1,50 @@
+// Code runs only after the DOM is loaded
 $(document).ready(function () {
 
-
     $('#movie-form').on('submit', function (event) {
-        event.preventDefault()
+        event.preventDefault() // prevents the default form submission, which would reload the page
+        
         //Get form values
         const title = $('#title').val();
         const genre = $('#genre').val();
         const year = $('#year').val();
         
-        //Create a movie object
+        //Create a movie object with the collected values
         const movie = { title, genre, year };
+
+            /* {
+        title: "Movie Title",  // e.g., "Inception"
+        genre: "Movie Genre",  // e.g., "Sci-Fi"
+        year: "2021"           // e.g., "2021"
+        }
+        */
         
         //Get movies from LocalStorage
-        let movies = JSON.parse(localStorage.getItem('movies')) || [];
+        let movies = JSON.parse(localStorage.movies) || [];
 
-        // add the new movie to the array
+        // Add the new movie
         movies.push(movie);
         
-        // Store the updated movies array back to
-        localStorage.setItem('movies', JSON.stringify(movies))
+        // Store the updated movies array
+        localStorage.movies =  JSON.stringify(movies);
         
         //Clear the form inputs
         $('#movie-form')[0].reset();
-
+        
         displayMovies();
     });
 
     function displayMovies() {
         const movieList = $('#movie-list');
-        movieList.empty(); //clear the list
+        movieList.empty(); //clear the current displayed list
         
-        //get movies
-        let movies = JSON.parse(localStorage.getItem('movies')) || [];
+        // Retrieves the updated movies from localStorage
+        let movies = JSON.parse(localStorage.movies) || [];
         
-        //use for/in loop to iterate over movies
+        // Use for/in loop to iterate through each movie 
         for (let index in movies) {
             let movie = movies[index]
+            // Creates a list item to display
             let listItem = $('<li></li>').text(`${movie.title} - (${movie.genre}, ${movie.year})`);
             movieList.append(listItem)
         }
@@ -43,13 +52,17 @@ $(document).ready(function () {
     
 
     $('#search').click(function () {
+
+        // Retrieves the movie name entered in the input
         const movie = $('#search-movie').val()
         const URL = `https://www.omdbapi.com/?apikey=${API_KEY}&t=`
 
+        // AJAX request to the OMDb API to fetch movie details
         $.ajax({
             url: URL + movie,
             method: "GET",
             success: function (data) {
+                // Checks if the movie was found and display its information
                 if (data.Response === "True") {
                     const movieInfo = `
                     <h3> Title: ${data.Title}</h3>
