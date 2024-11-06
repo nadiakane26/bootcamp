@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <h3>Record a New Birthday:</h3>
+    <form id="birthday-form" onsubmit=logBirthday() action='index.html'>
+        <p>Enter their full name: </p>
+        <input name='firstname' type='text' placeholder="First Name"><br><br>
+        <input name='lastname' type='text' placeholder="Last Name">
+
+        <p>Enter their birthday</p>
+        <input name='birthday' type='date'>
+        <input type='submit'>
+
+        <!-- This is the first page!!!!!!!
+		    1. Create form to log birthday 
+		    2. When the form is submitted, store friend object 
+		    3. Redirect to index.html
+		    
+		    -->
+    </form>
+    <script src="birthday-data.js"></script>
+
+</body>
+
+</html>

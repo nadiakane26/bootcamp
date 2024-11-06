@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+		<style>
+		    
+		    th, td{
+		        border-bottom: solid 1px black; 
+		        padding: 10px;
+		    }
+		    table{
+		        border-collapse:collapse;
+		        
+		    }
+		</style>
+	</head>
+
+	<body>
+	    <table>
+	        <tr>
+	            <th>Item</th>
+	            <th>Cost</th>
+	            <th>Purpose</th>
+	        </tr>
+	        <tr>
+	            <td>100 Balloons</td>
+	            <td>10.50</td>
+	            <td>Ryan's Birthday Party!</td>
+	        </tr>
+	        <tr>
+	            <td>Ice</td>
+	            <td>3.00</td>
+	            <td>Lemonade Stand</td>
+	        </tr>
+	        <tr>
+	            <td>Stain Remover</td>
+	            <td>5.00</td>
+	            <td>Dirty Soccer Uniform</td>
+	        </tr>
+	        <tr>
+	            <td>Service Fee</td>
+	            <td>86.00</td>
+	            <td>Flat Tire</td>
+	        </tr>
+	    </table>
+    	<script>
+    	
+    	// Change the th tags so that the font-size is 20px, and the style is italic. 
+    	$("th").css({"font-size":"20px", "font-style":"italic"});
+    	// All odd columns of table data are lightblue
+    	$("td:nth-child(odd)").css("background-color","lightblue");
+    	//All even columns are tomato
+    	$("td:nth-child(even)").css("background-color","tomato");
+    	</script>
+	</body>
+</html>

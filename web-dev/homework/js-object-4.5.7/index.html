@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>To Do List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+</head>
+
+<body>
+    <div id="to-do">
+        <h4>To Do List!</h4>
+    </div>
+    <hr>
+    <form id="task-form" onsubmit=saveTask()>
+        Enter your task here:
+        <input type=text name="task">
+        <input type=submit>
+    </form>
+    <br>
+    <div id="to-do-list">
+    </div>
+</body>
+<script>
+    // Save the task
+    function saveTask() {
+        event.preventDefault();
+        var taskList = $("#task-form").serializeArray(); // Array of objects
+        var task = taskList[0].value;
+
+        // Check if the task alread exists
+        if (doesTaskExist(task)) {
+            alert("That task already exists!");
+            return;
+        }
+
+        // Get tasks from localStorage
+        if (localStorage.tasks) {
+            var tasks = JSON.parse(localStorage.tasks); // List of string tasks
+        } else {
+            tasks = []
+        }
+
+        // Add task the the localStorage
+        tasks.push(task);
+        localStorage.tasks = JSON.stringify(tasks);
+        // Append the new task to the list 
+        $("#to-do-list").append("<li>" + task + "</li>");
+        // Clear the input field
+        $("form").trigger("reset");
+
+    }
+
+    // Checks if the task is already there
+    function doesTaskExist(task) {
+        if (localStorage.tasks) {
+            var tasks = JSON.parse(localStorage.tasks);
+        } else {
+            tasks = []
+        }
+
+        for (var i = 0; i < tasks.length; i++) {
+            if (tasks[i] === task) {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    // Load tasks from localStorage and shows them
+    function loadTasks() {
+        if (localStorage.tasks) {
+            var tasks = JSON.parse(localStorage.tasks);
+        } else {
+            tasks = []
+        }
+
+        for (var i = 0; i < tasks.length; i++) {
+            $("#to-do-list").append("<li>" + tasks[i] + "</li>");
+
+
+        }
+    }
+    loadTasks();
+    // Cross off for task completion
+    $("#to-do-list").on("click", "li", function () {
+        // Strike through the item
+        $(this).css("text-decoration", "line-through");
+        // After 0.25 seconds, remove the task
+        setTimeout(() => {
+            $(this).remove();
+        }, 250);
+
+    });
+
+
+</script>
+
+</html>

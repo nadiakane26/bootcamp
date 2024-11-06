@@ -71,3 +71,8 @@ anagrams.each do |pair|
     puts "\"#{pair[0]}\" and \"#{pair[1]}\""
 end
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> d4782a6 (Initial commit after re-initializing git)
