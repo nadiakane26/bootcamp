@@ -11,7 +11,7 @@
         <button id = "search">Search</button>
         <h5 id = "release-date"></h5>
         <script>
-            /*var URL = "https://static.codehs.com/api/12345/movies/all";
+            var URL = "https://static.codehs.com/api/12345/movies/all";
             $("#search").click(function(){
                 var movie = $("#movie").val();
                 findReleaseDate(movie);
@@ -33,12 +33,12 @@
                    });
                    
             }
-            */
+            
 
             
             // http://www.omdbapi.com/?apikey=[yourkey]&
             // https://www.omdbapi.com/?t=Dr.+No&apikey=8baa88ba&
-            
+            /*
             var API_KEY = '8baa88ba';
             var URL = `https://www.omdbapi.com/?apikey=${API_KEY}&t=`;
             // console.log(URL);
@@ -50,12 +50,12 @@
             
             function findReleaseDate(movie){
                $.getJSON(URL + movie, function(data){
-                   console.log(data);
+                   //console.log(data);
                    $("#release-date").text("Release Date: " + data.Released);
                    
                });
             }
-            
+            */
             
         </script>
     </body>
