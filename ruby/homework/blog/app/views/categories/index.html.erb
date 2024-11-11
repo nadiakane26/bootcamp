@@ -1,2 +1,14 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<h1>Categories</h1>
+
+<% if user_signed_in? %>
+  <%= link_to 'Create New Category', new_category_path %>
+<% else %>
+  <p>You need to sign in to create a category.</p>
+<% end %>
+
+<% @categories.each do |category| %>
+  <div>
+    <h2><em><%= category.name %></em></h2>
+    <p><em><%= category.description %></em></p>  <!-- Italicized description -->
+  </div>
+<% end %>
