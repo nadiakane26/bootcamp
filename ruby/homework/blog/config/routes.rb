@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy]  
   
   # Root path points to categories index
-  root "categories#index"
+  #root "categories#index"
+  root "articles#index"
 
   # Routes for articles and their comments
-  resources :articles do
-    resources :comments
+  resources :categories do
+    resources :articles do
+      resources :comments
+    end
   end
 
   # Health check route for your app

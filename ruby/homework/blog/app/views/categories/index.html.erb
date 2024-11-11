@@ -10,5 +10,8 @@
   <div>
     <h2><em><%= category.name %></em></h2>
     <p><em><%= category.description %></em></p>  <!-- Italicized description -->
+
+    <!-- Display the number of articles within each category -->
+    <p>Number of articles: <%= category.articles.count %></p>
   </div>
 <% end %>
