@@ -1,0 +1,5 @@
+class AddCategoryRefToArticles < ActiveRecord::Migration[8.0]
+  def change
+    add_reference :articles, :category, null: true, foreign_key: true
+  end
+end
