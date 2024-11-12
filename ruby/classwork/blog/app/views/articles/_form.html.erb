@@ -9,7 +9,7 @@
   
     <div>
       <%= form.label :body %><br>
-      <%= form.text_area :body %><br>
+      <%= form.textarea :body %><br>
       <% article.errors.full_messages_for(:body).each do |message| %>
         <div><%= message %></div>
       <% end %>
@@ -18,11 +18,10 @@
     <div>
       <%= form.submit %>
     </div>
-
     <div>
-      <%= form.label :status %><br>
-      <%= form.select :status, Visible::VALID_STATUSES, selected: article.status || 'public' %>
-    </div>
+  <%= form.label :status %><br>
+  <%= form.select :status, Visible::VALID_STATUSES, selected: article.status || 'public' %>
+</div>
 
   <% end %>
   

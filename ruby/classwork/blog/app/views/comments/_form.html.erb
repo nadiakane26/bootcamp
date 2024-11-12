@@ -5,13 +5,14 @@
     </p>
     <p>
       <%= form.label :body %><br>
-      <%= form.text_area :body %>
+      <%= form.textarea :body %>
     </p>
     <p>
       <%= form.submit %>
     </p>
     <p>
-        <%= form.label :status %><br>
-        <%= form.select :status, Visible::VALID_STATUSES, selected: 'public' %>
-    </p>
+  <%= form.label :status %><br>
+  <%= form.select :status, Visible::VALID_STATUSES, selected: 'public' %>
+</p>
   <% end %>
+  
