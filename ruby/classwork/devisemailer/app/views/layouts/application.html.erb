@@ -15,9 +15,18 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
   </head>
 
-  <body>
+  <body data-no-turbolink="true">
+  <%= render "layouts/nav" %>
+
+  <%= bootstrap_flash %>
+
+  <div class="container">
     <%= yield %>
-  </body>
+  </div>
+
+  <%= render 'layouts/foot' %>
+</body>
 </html>
