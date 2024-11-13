@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   # Comments are nested under articles
   resources :articles do
-    resources :comments
+    resources :comments, only: [:create, :destroy]
   end
 end 

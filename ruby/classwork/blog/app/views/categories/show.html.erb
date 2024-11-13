@@ -1,9 +1,8 @@
-<h2><%= @category.name %></h2> <!-- Read --> 
+<h2><%= @category.name %></h2>
 <p><em><%= @category.description %></em></p> 
 
 <ul>
-  <li><%= link_to "Edit", edit_category_path(@category) %></li> <!-- Update/Edit -->
-  <!-- Delete --> 
+  <li><%= link_to "Edit", edit_category_path(@category) %></li> 
   <li><%= link_to "Delete", category_path(@category), data: { 
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
@@ -23,3 +22,5 @@
 
 
 <%= link_to 'Back to Categories', categories_path %> 
+<%= link_to 'Articles', articles_path %> 
+<%= link_to 'Create Article', new_article_path %> 

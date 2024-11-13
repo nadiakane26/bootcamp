@@ -1,13 +1,13 @@
 # Basic Blog Application with Articles and Categories
 
-This application is a simple blog that features articles organized by categories. It was built following the steps in the [Ruby on Rails Getting Started Guide version 8.0](https://guides.rubyonrails.org/getting_started.html) and includes a custom `Category` model for organizing articles.
+This application is a simple blog that features articles organized by categories. It was built following the steps in the [Ruby on Rails Getting Started Guide Version 8.0](https://guides.rubyonrails.org/getting_started.html) and includes a custom `Category` model for organizing articles.
 
 ## Features
 
 - **Articles**: Create, view, edit, and delete blog posts.
 - **Categories**: Organize articles by categories, allowing users to explore content by topic.
 
-## Setup and Installation
+## Setup
 
 ```
 rails new blog -d postgresql
