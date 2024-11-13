@@ -1,12 +1,25 @@
-<h1><%= @category.name %></h1>
-<p><%= @category.description %></p>
+<h2><%= @category.name %></h2> <!-- Read --> 
+<p><em><%= @category.description %></em></p> 
 
-<h2>Articles in this Category:</h2>
+<ul>
+  <li><%= link_to "Edit", edit_category_path(@category) %></li> <!-- Update/Edit -->
+  <!-- Delete --> 
+  <li><%= link_to "Delete", category_path(@category), data: { 
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+<h2>Articles:</h2>
 <ul>
   <% @category.articles.each do |article| %>
     <li>
-      <%= link_to article.title, category_article_path(@category, article) %>
+      <%= link_to article.title, article %> <!-- Links to individual article's show page -->
     </li>
   <% end %>
 </ul>
-<%= link_to "Back to Categories", categories_path %>
+
+
+
+
+<%= link_to 'Back to Categories', categories_path %> 

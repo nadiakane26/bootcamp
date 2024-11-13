@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "category#index"
+  root "categories#index"
 
   # Health check route
   get "up" => "rails/health#show", as: :rails_health_check
