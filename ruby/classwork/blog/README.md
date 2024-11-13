@@ -1,15 +1,37 @@
-# README
+# Basic Blog Application with Articles and Categories
 
-This README would normally document whatever steps are necessary to get the
-application up and running, but right now I'm running into several issues while going through the guide
+This application is a simple blog that features articles organized by categories. It was built following the steps in the [Ruby on Rails Getting Started Guide version 8.0](https://guides.rubyonrails.org/getting_started.html) and includes a custom `Category` model for organizing articles.
 
+## Features
 
+- **Articles**: Create, view, edit, and delete blog posts.
+- **Categories**: Organize articles by categories, allowing users to explore content by topic.
 
-1. Created Article is not shown/added -- Resolved
-2. Anyone can destroy or create despite having the authentication 
-3. Had issues with copying code  -- Resolved (Was copying version 8.0.0 onto 7.2.2 )
-- `textarea` changed to `text_area`
-- `params.expect(comment: [:commenter, :body, :status])` changed to `params.require(:comment).permit(:commenter, :body)`
-    
-    
-4. Comments are not showing up -- Resolved
+## Setup and Installation
+
+```rails new blog -d postgresql
+bin/rails db:create
+```
+
+## Backfilling Category Descriptions
+
+The following rake function was used to backfill category descriptions
+
+```namespace :categories do
+    desc "Backfill descriptions for existing categories"
+    task backfill_descriptions: :environment do
+      Category.where(description: [nil, ""]).find_each do |category| # Finds categories with no description or empty string
+        category.update(description: "Default description for #{category.name}") # Updates description
+      end
+      puts "Backfill completed for categories descriptions."
+    end
+  end
+```
+
+To run this task, use the following command in the terminal:
+`rake categories:backfill_descriptions `
+
+## Future Improvements
+
+- Utilize Rails scaffolding to streamline development.
+- Refining the design by further integrating Bootstrap styles.

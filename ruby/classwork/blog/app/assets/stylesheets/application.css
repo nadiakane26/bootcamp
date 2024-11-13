@@ -8,5 +8,5 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
