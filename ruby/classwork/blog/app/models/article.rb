@@ -1,7 +1,7 @@
 class Article < ApplicationRecord
     include Visible
   
-    belongs_to :category, optional: true
+    belongs_to :category, optional: false
     has_many :comments, dependent: :destroy
     
     validates :status, inclusion: { in: ['public', 'private', 'archived'] }
