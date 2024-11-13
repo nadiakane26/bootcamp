@@ -1,15 +1,23 @@
-<h2><%= @category.name %></h2>
-<p><em><%= @category.description %></em></p> 
-
-<ul>
-  <li><%= link_to "Edit", edit_category_path(@category) %></li> 
-  <li><%= link_to "Delete", category_path(@category), data: { 
+<h2><%= @category.name %> </h2>
+<p><em><%= @category.description %></em></p>
+<!-- Edit and Delete Links -->
+  <%= link_to "Edit", edit_category_path(@category) %> | 
+  <%= link_to "Delete", category_path(@category), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } %></li>
-</ul>
+                  } %>
 
-<h2>Articles:</h2>
+<!-- Category and Featured Post Box -->
+<div class="category-box">
+  <h3>Featured Post: <%= @category.articles.first.title %></h3>
+  <p><%= @category.articles.first.created_at.strftime("%B %d") %></p>
+  <div class="post-body">
+    <%= simple_format(@category.articles.first.body) %>
+  </div>
+</div>
+
+<!-- Articles List -->
+<h3>Recent Articles:</h3>
 <ul>
   <% @category.articles.each do |article| %>
     <li>
@@ -18,9 +26,6 @@
   <% end %>
 </ul>
 
-
-
-
-<%= link_to 'Back to Categories', categories_path %> 
-<%= link_to 'Articles', articles_path %> 
-<%= link_to 'Create Article', new_article_path %> 
+<!-- Navigation Links -->
+<%= link_to 'Back to Categories', categories_path %> |
+<%= link_to 'Create Article', new_article_path %>
