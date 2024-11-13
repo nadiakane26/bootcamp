@@ -9,7 +9,8 @@ This application is a simple blog that features articles organized by categories
 
 ## Setup and Installation
 
-```rails new blog -d postgresql
+```
+rails new blog -d postgresql
 bin/rails db:create
 ```
 
@@ -29,7 +30,9 @@ The following rake function was used to backfill category descriptions
 ```
 
 To run this task, use the following command in the terminal:
-`rake categories:backfill_descriptions `
+```
+rake categories:backfill_descriptions 
+```
 
 ## Future Improvements
 
