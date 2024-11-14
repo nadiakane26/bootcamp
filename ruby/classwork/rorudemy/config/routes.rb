@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get "contacts/new"
+  get "contacts/create"
   
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :articles
+  resources :contacts
   root to: "pages#index"
   # get "hello" to "pages/contact"
   get  "pages/contact"

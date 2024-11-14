@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="well">
+            <%= simple_form_for @contact do |form| %>
+            <%= form.input :name %>
+            <%= form.input :email %>
+            <%= form.input :message %>
+            <%= form.submit "Get in touch!", class: "btn btn-info" %>
+            <% end %>
+        </div>
+    </div>
+</div>
