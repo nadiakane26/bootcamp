@@ -6,7 +6,10 @@ Our blog has <%= Article.public_count %> articles and counting!
   <% @articles.each do |article| %>
     <% unless article.archived? %>
       <li>
-        <%= link_to article.title, article %>
+        <%= link_to article.title, article %> 
+        <% if article.author %> 
+          Author: <%= article.author.name %> - <%= article.author.bio %> 
+        <% end %>
       </li>
     <% end %>
   <% end %>

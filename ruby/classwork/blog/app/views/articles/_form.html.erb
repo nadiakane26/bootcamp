@@ -15,9 +15,14 @@
       <% end %>
     </div>
     <div>
-      <%= form.label :category_id, "Category" %><br>
-      <%= form.select :category_id, Category.all.collect { |category| [category.name, category.id] }, { prompt: "Select a category" } %>
-    </div>
+  <%= form.label :category_id, "Category" %><br>
+  <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "Select a category" %>
+</div>
+
+<div>
+  <%= form.label :author_id, "Author" %><br>
+  <%= form.collection_select :author_id, Author.all, :id, :name, prompt: "Select an author" %>
+</div>
 
     <div>
       <%= form.submit %>

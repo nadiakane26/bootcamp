@@ -15,8 +15,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
-
+    @article = Article.new(params[:id])
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
     else
@@ -47,7 +46,7 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.expect(article: [:title, :body, :status, :category_id])
+      params.expect(article: [:title, :body, :status, :category_id, :author_id])
     end
 
     def set_categories
