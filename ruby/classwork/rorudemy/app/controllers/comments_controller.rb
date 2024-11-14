@@ -17,9 +17,9 @@ class CommentsController < ApplicationController
     
     def update
         @article = Article.find(params[:article_id])
-        @dcomment = @article.comments.find(params[:id])
+        @comment = @article.comments.find(params[:id])
 
-        if @comment.update(params[:comment].permit(:body))
+        if @comment.update(comment_params)
           redirect_to article_path(@article), notice: "Your comment has been updated."
         else
           render 'edit'
@@ -36,6 +36,11 @@ class CommentsController < ApplicationController
         @comment = @article.comments.find(params[:id])
         @comment.destroy
         redirect_to article_path(@article), notice: "Your comment has been deleted."
-        end
+    end
+
+    private
+
+    def comment_params
+    params.expect(comment: [:body])
     end
 end

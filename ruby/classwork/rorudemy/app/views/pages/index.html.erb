@@ -4,6 +4,10 @@
     <div class="col-lg-8">
         <!-- Blog Post -->
         <!-- Title -->
+    <div class="jumbotron">
+        <h1 class="display-4"">Welcome to Nadia's Articles!</h1>
+        <p class="lead">This was built by following the Ruby on Rails Beginner Guide from Udemy.</p>
+    </div>
         <h1>Blog Post Title</h1>
         <!-- Author -->
         <p class="lead">
@@ -86,52 +90,25 @@
                 <!-- End Nested Comment -->
             </div>
         </div>
-    </div>
-    <!-- Blog Sidebar Widgets Column -->
-    <div class="col-md-4">
-        <!-- Blog Search Well -->
-        <div class="well">
-            <h4>Blog Search</h4>
-            <div class="input-group">
-                <input type="text" class="form-control">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
-            </div>
         </div>
-        <!-- Blog Categories Well -->
-        <div class="well">
-            <h4>Blog Categories</h4>
-            <div class="row">
-                <div class="col-lg-6">
-                    <ul class="list-unstyled">
-                        <li><a href="#">Category Name</a></li>
-                        <li><a href="#">Category Name</a></li>
-                        <li><a href="#">Category Name</a></li>
-                        <li><a href="#">Category Name</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="list-unstyled">
-                        <li><a href="#">Category Name</a></li>
-                        <li><a href="#">Category Name</a></li>
-                        <li><a href="#">Category Name</a></li>
-                        <li><a href="#">Category Name</a></li>
-                    </ul>
-                </div>
+
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+    
+    
+            <!-- Blog Categories Well -->
+    
+    
+            <!-- Side Widget Well -->
+            <div class="well">
+              <h4>Recent Posts</h4>
+                <% @articles.each do |a| %>
+                  Created by: <%= a.user.username %><br />
+                  <strong><%= link_to a.title, a %></strong>
+                  <p><%= truncate(a.body) %></p>
+                <% end %>
             </div>
-        </div>
-        <!-- Side Widget Well -->
-        <div class="well">
-            <h4>Recent Articles</h4>
-            <% @articles.each do |article| %>
-                Created by: <%= article.user.username %> <br/>
-                <strong><%= link_to article.title, article %></strong>
-                <p><%= truncate(article.body) %></p>
-            <% end %>
-            
+    
         </div>
     </div>
 </div>

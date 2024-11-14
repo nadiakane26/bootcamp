@@ -1,5 +1,5 @@
 git add .
-git commit -m "Comments Model and Controller"
+git commit -m "Updating View, Ruby on Rails a Beginners Guide Completed"
 git push origin main
 
 

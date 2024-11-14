@@ -1,10 +1,60 @@
-<p style="color: green"><%= notice %></p>
+<div class="row">
+  <!-- Blog Post Content Column -->
+  <div class="col-lg-8">
+    <!-- Blog Post -->
+    <!-- Title -->
+    <h1 style="font-size: 62.5px;">
+      <%= @article.title %>
+    </h1>
 
-<%= render @article %>
+    <!-- Author -->
+    <p class="lead">
+      <%= @article.user.username %>
+    </p>
 
-<div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
+    <hr>
 
-  <%= button_to "Destroy this article", @article, method: :delete %>
+    <!-- Date/Time -->
+    <p><span class="glyphicon glyphicon-time"></span> Was Posted:</p>
+
+    <hr>
+
+    <hr>
+
+    <!-- Post Content -->
+    <p><%= @article.body %></p>
+
+    <hr>
+
+    <!-- Blog Comments -->
+    <%= render @article.comments %>
+    <%= render 'comments/form' %>
+
+    <div class="well">
+      <h4>blah blah</h4>
+    </div>
+
+    <hr>
+
+    <!-- Posted Comments -->
+    <!-- Comment -->
+    <!-- Comments will go here if you have a loop rendering them -->
+  </div>
+
+  <!-- Blog Sidebar Widgets Column -->
+  <div class="col-md-4">
+    <!-- Blog Search Well -->
+    <!-- Search form goes here -->
+
+    <!-- Blog Categories Well -->
+    <!-- Category list goes here -->
+
+    <!-- Side Widget Well -->
+    <div class="well">
+      <!-- Recent posts content goes here -->
+    </div>
+  </div>
 </div>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
