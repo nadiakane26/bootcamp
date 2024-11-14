@@ -1,4 +1,4 @@
-
+<% if current_user %>
   <footer class="footer-distributed">
     <div class="footer-right">
       <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -18,7 +18,7 @@
       <p></p>
     </div>
   </footer>
-
+<% else %>
   <footer class="footer-distributed">
     <div class="footer-left">
       <h3>Company<span>logo</span></h3>
@@ -51,4 +51,4 @@
       </form>
     </div>
   </footer>
-
+<% end %>
