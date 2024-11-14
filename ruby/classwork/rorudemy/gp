@@ -1,5 +1,5 @@
 git add .
-git commit -m "Updating View, Ruby on Rails a Beginners Guide Completed"
+git commit -m "Updated README"
 git push origin main
 
 
