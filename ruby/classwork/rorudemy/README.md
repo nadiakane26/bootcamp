@@ -28,16 +28,15 @@ For more explanation this setup, check the following resources
 - [StackOverflow - Rails & Devise using POST request for sign out. How can I change this to a DELETE request?](https://stackoverflow.com/questions/65863898/rails-devise-using-post-request-for-sign-out-how-can-i-change-this-to-a-delet)
 
 ### Styling with Yeti or Other Themes
-For the design, this app uses the [Bootswatch Version 3](https://bootswatch.com/3/) theme. You can easily switch to another Bootswatch theme if you'd like.
+For the design, this app uses the [Bootswatch Version 3](https://bootswatch.com/3/) theme. 
 
 ### Dropdown Menu in Navbar
 To implement the dropdown menu in the navigation bar, add the following scripts to the bottom of your `nav.html.erb` (before the `</body>` tag):
-Add the this to the bottom of the nav.html
 ```html
 <script src="
 //ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 ```
 ### Things That Yet To Complete
-- Pushing to Heroku: I encountered issues while trying to push the app to Heroku. 
+- Pushing to Heroku 
 - Sendgrid, Email Recovery

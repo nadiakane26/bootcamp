@@ -1,3 +1,3 @@
 git add -A 
-git commit -m "Code Challenge: Extend Blog App with "Author" Model"
+git commit -m ""
 git push origin main 
