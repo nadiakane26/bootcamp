@@ -12,7 +12,7 @@
 - Fun With the Controller
 
 ## Incompleted Sections
-- Heroku
+- [Heroku](https://stackoverflow.com/questions/71529163/problems-with-git-push-heroku-master-no-longer-working)
 
 ## Notes
 - Delete button isn't working (Resolved)
@@ -23,5 +23,4 @@
 <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
 
 ```
-
-Are you sure prompt isn't working
+- Are you sure? prompt isn't working
