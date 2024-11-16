@@ -1,3 +1,3 @@
 git add .
-git commit -m "- Style Devise Views & Associations"
+git commit -m " Style Modifications & Fun With the Controller, Full Course Completed"
 git push origin main 
