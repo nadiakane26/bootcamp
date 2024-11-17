@@ -1,36 +1,48 @@
+
+<p style="color: green"><%= notice %></p>
+
+<div class="container">
 <%= form_with model: article do |form| %>
-    <div>
-      <%= form.label :title %><br>
-      <%= form.text_field :title %>
-      <% article.errors.full_messages_for(:title).each do |message| %>
-        <div><%= message %></div>
-      <% end %>
-    </div>
   
-    <div>
-      <%= form.label :body %><br>
-      <%= form.textarea :body %><br>
-      <% article.errors.full_messages_for(:body).each do |message| %>
-        <div><%= message %></div>
-      <% end %>
-    </div>
-    <div>
-  <%= form.label :category_id, "Category" %><br>
-  <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "Select a category" %>
-</div>
+    <!-- Title Field -->
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div class="text-danger"><%= message %></div>
+    <% end %>
+  </div>
 
-<div>
-  <%= form.label :author_id, "Author" %><br>
-  <%= form.collection_select :author_id, Author.all, :id, :name, prompt: "Select an author" %>
-</div>
+  <!-- Body Field -->
+  <div class="mb-3">
+    <%= form.label :body, class: "form-label" %>
+    <%= form.text_area :body, class: "form-control", rows: 5 %>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div class="text-danger"><%= message %></div>
+    <% end %>
+  </div>
 
-    <div>
-      <%= form.submit %>
-    </div>
-    <div>
-      <%= form.label :status %><br>
-      <%= form.select :status, Visible::VALID_STATUSES, selected: article.status || 'public' %>
-</div>
+  <!-- Category Field -->
+  <div class="mb-3">
+    <%= form.label :category_id, "Category", class: "form-label" %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: "Select a category" }, class: "form-select" %>
+  </div>
 
-  <% end %>
-  
+  <!-- Author Field -->
+  <div class="mb-3">
+    <%= form.label :author_id, "Author", class: "form-label" %>
+    <%= form.collection_select :author_id, Author.all, :id, :name, { prompt: "Select an author" }, class: "form-select" %>
+  </div>
+
+  <!-- Status Field -->
+  <div class="mb-3">
+    <%= form.label :status, class: "form-label" %>
+    <%= form.select :status, Visible::VALID_STATUSES, { selected: article.status || 'public' }, class: "form-select" %>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="mb-3">
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
+</div>

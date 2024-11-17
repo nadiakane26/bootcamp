@@ -1,31 +1,59 @@
-<h2><%= @category.name %> </h2>
-<p><em><%= @category.description %></em></p>
-<!-- Edit and Delete Links -->
-  <%= link_to "Edit", edit_category_path(@category) %> | 
-  <%= link_to "Delete", category_path(@category), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
+<div class="container mt-4">
+  <!-- Category Header -->
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2 class="display-5"><%= @category.name %></h2>
+      <p class="text-muted"><em><%= @category.description %></em></p>
+    </div>
+  </div>
 
-<!-- Category and Featured Post Box -->
-<div class="category-box">
-  <h3>Featured Post: <%= @category.articles.first.title %></h3>
-  <p><%= @category.articles.first.created_at.strftime("%B %d") %></p>
-  <div class="post-body">
-    <%= simple_format(@category.articles.first.body) %>
+  <!-- Edit/ Delete -->
+  <div class="row mt-3">
+    <div class="col-12 text-center">
+      <%= link_to "Edit", edit_category_path(@category), class: "btn btn-secondary btn-sm mx-1" %> 
+      <%= link_to "Delete", category_path(@category), class: "btn btn-danger btn-sm mx-1", data: { 
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                      } %>
+    </div>
+  </div>
+
+  <!-- Category Featured Post -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h3 class="h5 mb-0">Featured Post: <%= @category.articles.first.title %></h3>
+        </div>
+        <div class="card-body">
+          <p class="small text-muted"><%= @category.articles.first.created_at.strftime("%B %d") %></p>
+          <div class="post-body">
+            <%= simple_format(@category.articles.first.body) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Articles -->
+  <div class="row mt-5">
+    <div class="col-12">
+      <h3>Recent Articles:</h3>
+      <ul class="list-group">
+        <% @category.articles.each do |article| %>
+          <li class="list-group-item">
+            <%= link_to article.title, article, class: "text-decoration-none text-dark" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Navigation Links -->
+  <div class="row mt-4">
+    <div class="col-12 text-center">
+      <%= link_to 'Back to Categories', categories_path, class: "btn btn-outline-primary btn-sm mx-1" %>
+      <%= link_to 'Create New Article', new_article_path, class: "btn btn-outline-success btn-sm mx-1" %>
+    </div>
   </div>
 </div>
-
-<!-- Articles List -->
-<h3>Recent Articles:</h3>
-<ul>
-  <% @category.articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article %> <!-- Links to individual article's show page -->
-    </li>
-  <% end %>
-</ul>
-
-<!-- Navigation Links -->
-<%= link_to 'Back to Categories', categories_path %> |
-<%= link_to 'Create Article', new_article_path %>

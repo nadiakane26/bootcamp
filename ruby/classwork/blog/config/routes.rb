@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :authors
-  root "categories#index"
+  root "pages#home"
+
 
   # Health check route
   get "up" => "rails/health#show", as: :rails_health_check

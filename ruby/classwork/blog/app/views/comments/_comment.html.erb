@@ -1,18 +1,24 @@
 <% unless comment.archived? %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
+  <div class="card mb-3">
+    <div class="card-body">
+      <!-- Commenter Name -->
+      <h5 class="card-title">
+        <%= comment.commenter %>
+      </h5>
 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
+      <!-- Comment Body -->
+      <p class="card-text">
+        <%= comment.body %>
+      </p>
 
-  <p>
-    <%= link_to "Delete Comment", [comment.article, comment], data: {
-                  turbo_method: :delete,
-                  turbo_confirm: "Are you sure?"
-                } %>
-  </p>
+      <!-- Delete Button -->
+      <%= link_to "Delete Comment", [comment.article, comment], 
+                  class: "btn btn-danger btn-sm", 
+                  data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+    </div>
+  </div>
 <% end %>
+
