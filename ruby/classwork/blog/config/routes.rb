@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "donations/new"
+  get "donations/create"
   resources :authors
   root "pages#home"
 
@@ -13,4 +15,6 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: [:create, :destroy]
   end
+
+  resources :donations, only: [:new, :create]
 end 

@@ -20,9 +20,11 @@
       <div class="card h-100 d-flex flex-column">
         <div class="row g-0 h-100">
           <div class="col-md-4">
+          <div class="author-img-container">
           <% if author.image.attached? %>
-          <%= image_tag author.image, alt: author.name, class: "img-fluid float-start" %>
+            <%= image_tag author.image, alt: author.name, class: "img-fluid author-img" %>
           <% end %>
+        </div>
           </div>
           <div class="col-md-8">
             <div class="card-body">
