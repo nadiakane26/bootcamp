@@ -12,9 +12,9 @@
     <div class="col-12 text-center">
       <%= link_to "Edit", edit_category_path(@category), class: "btn btn-secondary btn-sm mx-1" %> 
       <%= link_to "Delete", category_path(@category), class: "btn btn-danger btn-sm mx-1", data: { 
-                        turbo_method: :delete,
-                        turbo_confirm: "Are you sure?"
-                      } %>
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %>
     </div>
   </div>
 
@@ -23,7 +23,8 @@
     <div class="col-12">
       <div class="card shadow-sm">
         <div class="card-header bg-primary text-white">
-          <h3 class="h5 mb-0">Featured Post: <%= @category.articles.first.title %></h3>
+          <% if @category.articles.any? %>
+            <h3 class="h5 mb-0">Featured Post: <%= @category.articles.first.title %></h3>
         </div>
         <div class="card-body">
           <p class="small text-muted"><%= @category.articles.first.created_at.strftime("%B %d") %></p>
@@ -31,6 +32,9 @@
             <%= simple_format(@category.articles.first.body) %>
           </div>
         </div>
+        <% else %>
+          <h3 class="h5 mb-0">No Articles Yet</h3>
+        <% end %>
       </div>
     </div>
   </div>
@@ -56,4 +60,14 @@
       <%= link_to 'Create New Article', new_article_path, class: "btn btn-outline-success btn-sm mx-1" %>
     </div>
   </div>
+
+  <!-- Category Image -->
+  <% if @category.image.attached? %>
+    <div class="row mt-4">
+      <div class="col-12 text-center">
+        <%= image_tag url_for(@category.image), alt: @category.name, class: "img-fluid rounded" %>
+      </div>
+    </div>
+  <% end %>
+
 </div>

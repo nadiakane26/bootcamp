@@ -1,6 +1,5 @@
-<p style="color: green"><%= notice %></p>
-
 <div class="container">
+<p style="color: green"><%= notice %></p>
   <div class="bg-light py-5 mb-4">
     <div class="container-fluid">
       <h1 class="display-4">Authors</h1>
@@ -21,7 +20,9 @@
       <div class="card h-100 d-flex flex-column">
         <div class="row g-0 h-100">
           <div class="col-md-4">
-            <img src="https://via.placeholder.com/220" class="img-fluid rounded-start" alt="<%= author.name %>">
+          <% if author.image.attached? %>
+          <%= image_tag author.image, alt: author.name, class: "img-fluid float-start" %>
+          <% end %>
           </div>
           <div class="col-md-8">
             <div class="card-body">

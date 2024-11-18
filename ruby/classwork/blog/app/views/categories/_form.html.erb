@@ -1,5 +1,5 @@
 <%= form_with model: @category do |form| %>
-  <!-- Name Field -->
+  <!-- Category Name -->
  <div class="mb-3">
       <%= form.label :name, class: "form-label" %>
       <%= form.text_field :name, class: "form-control" %>
@@ -8,7 +8,7 @@
       <% end %>
     </div>
 
-    <!-- Description Field -->
+    <!-- Description -->
     <div class="mb-3">
       <%= form.label :description, class: "form-label" %>
       <%= form.text_area :description, class: "form-control", rows: 5 %>
@@ -17,9 +17,15 @@
       <% end %>
     </div>
 
+    <div class="mb-3">
+    <div class="field">
+    <%= form.label :image, class: "form-label"  %>
+    <%= form.file_field :image, class: "form-control" %>
+  </div>
+  </div>
+
     <!-- Submit Button -->
     <div class="mb-3">
       <%= form.submit "Create Category", class: "btn btn-primary" %>
     </div>
   <% end %>
-</div>

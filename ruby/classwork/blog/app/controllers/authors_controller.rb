@@ -1,8 +1,6 @@
 class AuthorsController < ApplicationController
   http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show] # "Signed-in"
 
-  before_action :set_author, only: %i[ show edit update destroy ]
-
   # GET /authors or /authors.json
   def index
     @authors = Author.all
@@ -21,7 +19,7 @@ class AuthorsController < ApplicationController
 
   # GET /authors/1/edit
   def edit
-    @author = Author.edit
+    @author = Author.find(params[:id])
   end
 
   # POST /authors or /authors.json
@@ -41,6 +39,7 @@ class AuthorsController < ApplicationController
 
   # PATCH/PUT /authors/1 or /authors/1.json
   def update
+    @author = Author.find(params[:id]) 
     respond_to do |format|
       if @author.update(author_params)
         format.html { redirect_to @author, notice: "Author was successfully updated." }
@@ -63,13 +62,9 @@ class AuthorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_author
-      @author = Author.find(params.expect(:id))
-    end
 
     # Only allow a list of trusted parameters through.
     def author_params
-      params.expect(author: [ :name, :bio ])
+      params.expect(author: [ :name, :bio, :image ])
     end
 end

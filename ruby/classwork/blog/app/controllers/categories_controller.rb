@@ -14,13 +14,14 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(title: "...", body: "...")
+    @category = Category.new(category_params)
 
     if @category.save
       redirect_to @category
     else
       render :new, status: :unprocessable_entity
     end
+    @category.image.attach(params[:images])
   end
   def edit
     @category = Category.find(params[:id])
@@ -29,7 +30,7 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
 
-    if @category.update(article_params)
+    if @category.update(category_params)
       redirect_to @category
     else
       render :edit, status: :unprocessable_entity
@@ -44,7 +45,7 @@ class CategoriesController < ApplicationController
 
   private
   def category_params
-    params.expect(category: [:name, :description])
+    params.expect(category: [:name, :description, :image])
   end
 end
  

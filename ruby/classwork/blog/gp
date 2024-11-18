@@ -1,3 +1,3 @@
 git add -A 
-git commit -m "More Bootstrap Styling in Categories, Authors"
+git commit -m "Added images to Authors Page"
 git push origin main 

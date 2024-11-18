@@ -1,7 +1,29 @@
+<div class="container">
 <p style="color: green"><%= notice %></p>
-
 <h1><%= @author.name %></h1>
-<p><%= @author.bio %></p>
+
+ <div class="row">
+    <div class="col-md-2">
+      <% if @author.image.attached? %>
+        <%= image_tag @author.image, alt: @author.name, class: "img-fluid float-start" %>
+      <% end %>
+    </div>
+
+    <div class="col-md-8">
+      <p><%= @author.bio %></p>
+      <div class="row mt-3">
+<div class="col-12 text-center">
+  <%= link_to "Edit Author", edit_author_path(@author), class: "btn btn-secondary btn-sm mx-1" %> 
+  <%= link_to "Delete Article", author_path(@author), class: "btn btn-danger btn-sm mx-1", data: { 
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+</div>
+</div>
+
+    </div>
+    
+  </div>
 
 <h2>Articles by <%= @author.name %>:</h2>
 <% if @articles.any? %>
@@ -13,9 +35,3 @@
 <% else %>
   <p>This author has not written any articles yet.</p>
 <% end %>
-
-<div>
-  <%= link_to "Edit this author", edit_author_path(@author) %> |
-  <%= link_to "Back to authors", authors_path %> |
-  <%= button_to "Delete this author", @author, method: :delete, data: { confirm: "Are you sure?" } %>
-</div>
