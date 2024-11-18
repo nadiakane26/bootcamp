@@ -18,6 +18,15 @@
     </div>
   </div>
 
+  <!-- Category Image -->
+  <% if @category.image.attached? %>
+    <div class="row mt-4">
+      <div class="col-12 text-center">
+        <%= image_tag url_for(@category.image), alt: @category.name, class: "img-fluid rounded" %>
+      </div>
+    </div>
+  <% end %>
+
   <!-- Category Featured Post -->
   <div class="row mt-4">
     <div class="col-12">
@@ -61,13 +70,6 @@
     </div>
   </div>
 
-  <!-- Category Image -->
-  <% if @category.image.attached? %>
-    <div class="row mt-4">
-      <div class="col-12 text-center">
-        <%= image_tag url_for(@category.image), alt: @category.name, class: "img-fluid rounded" %>
-      </div>
-    </div>
-  <% end %>
+
 
 </div>

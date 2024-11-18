@@ -7,9 +7,12 @@
 
 <br>
 
-<div>
-  <%= link_to "Show this author", @author %> |
-  <%= link_to "Back to authors", authors_path %>
-</div>
+<!-- Navigation Links -->
+  <div class="row mt-4">
+    <div class="col-12 text-center">
+      <%= link_to "Back to authors", authors_path, class: "btn btn-outline-primary btn-sm mx-1" %>
+      <%= link_to "Show This Author",  @author, class: "btn btn-outline-success btn-sm mx-1" %>
+    </div>
+  </div>
 
 </div>

@@ -51,14 +51,11 @@ class AuthorsController < ApplicationController
     end
   end
 
-  # DELETE /authors/1 or /authors/1.json
   def destroy
-    @author.destroy!
+    @author = Author.find(params[:id])
+    @author.destroy
 
-    respond_to do |format|
-      format.html { redirect_to authors_path, status: :see_other, notice: "Author was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to @author, status: :see_other
   end
 
   private
