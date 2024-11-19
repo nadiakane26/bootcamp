@@ -1,7 +1,12 @@
-<div class="container mt-2">
-  <%= javascript_include_tag "donation", type: "module" %> <!-- Load the donation.js.erb file -->
+<% content_for :javascript do %>
+  <script type="module">
+  import "donation";
+  </script>
+  <%end%>
 
-  <h1 class="text-center mb-4">Support Our Blog!</h1>
+<div class="container mt-2">
+
+  <h1 class="mb-4">Support Our Blog!</h1>
   
   <%= form_with url: donations_path, method: :post, local: true, id: "payment-form", class: "p-4 border rounded shadow-sm bg-light" do |form| %>
     <%= form.hidden_field :csrf_token, value: form_authenticity_token %> <!-- Ensure the CSRF token is included -->

@@ -8,3 +8,4 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 
 
 pin "donation", to: 'donation.js'
+pin "article", to: 'article.js'

@@ -1,3 +1,3 @@
 git add -A 
-git commit -m "Minor changes"
+git commit -m "Added Toggle Function to Articles Show Page"
 git push origin main 
