@@ -52,9 +52,9 @@
   <div class="row mt-5">
     <div class="col-12">
       <h3>Recent Articles:</h3>
-      <ul class="list-group">
+      <ul class="list-group ">
         <% @category.articles.each do |article| %>
-          <li class="list-group-item">
+          <li class="list-group-item list-group-item-action">
             <%= link_to article.title, article, class: "text-decoration-none text-dark" %>
           </li>
         <% end %>
