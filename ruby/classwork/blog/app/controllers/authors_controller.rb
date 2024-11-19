@@ -28,8 +28,8 @@ class AuthorsController < ApplicationController
 
     respond_to do |format|
       if @author.save
-        format.html { redirect_to @author, notice: "Author was successfully created." }
-        format.json { render :show, status: :created, location: @author }
+        flash[:notice] = "Author was successfully created."
+      redirect_to @author
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @author.errors, status: :unprocessable_entity }
@@ -42,11 +42,10 @@ class AuthorsController < ApplicationController
     @author = Author.find(params[:id]) 
     respond_to do |format|
       if @author.update(author_params)
-        format.html { redirect_to @author, notice: "Author was successfully updated." }
-        format.json { render :show, status: :ok, location: @author }
+        flash[:notice] = "Author was successfully updated."
+        redirect_to @author
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @author.errors, status: :unprocessable_entity }
+        render :edit
       end
     end
   end
@@ -62,6 +61,6 @@ class AuthorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def author_params
-      params.expect(author: [ :name, :bio, :image ])
+      params.expect(author: [ :name, :bio, :image])
     end
 end

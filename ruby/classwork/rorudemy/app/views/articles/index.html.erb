@@ -9,15 +9,18 @@
       </h4>
       
       <!-- Date/Time -->
-      <p><span class="glyphicon glyphicon-time"></span></p>
-      
+      <p>
+        <i class="glyphicon glyphicon-time"></i>
+        Created at: <%= article.created_at.strftime("%B %d, %Y") %>
+      </p>
+
       <!-- Author -->
       <p>
         Article By: <strong><%= article.user.username %></strong>
       </p>
       <hr>
       
-      <!-- article Comments -->
+      <!-- Article Comments -->
       <!-- Comment -->
     <% end %>
     

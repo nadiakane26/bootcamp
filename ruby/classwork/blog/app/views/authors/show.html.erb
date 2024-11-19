@@ -25,13 +25,17 @@
     
   </div>
 
-<h2>Articles by <%= @author.name %>:</h2>
-<% if @articles.any? %>
-  <ul>
-    <% @articles.each do |article| %>
-      <li><%= link_to article.title, article_path(article) %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>This author has not written any articles yet.</p>
-<% end %>
+  <h2>Articles by <%= @author.name %>:</h2>
+
+  <% if @articles.any? %>
+    <ul class="list-group">
+      <% @articles.each do |article| %>
+        <li class="list-group-item list-group-item-action">
+          <%= link_to article.title, article_path(article), class: "text-decoration-none" %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>This author has not written any articles yet.</p>
+  <% end %>
+  

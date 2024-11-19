@@ -46,3 +46,12 @@
   border-radius: 5px 5px 0px 0px;  /* Optional: Rounded corners */
 }
 
+.nav-link:hover {
+  background-color: rgba(179, 179, 173, 0.1); /* Light background color on hover */
+}
+
+.author-card:hover, .article-card:hover {
+  transform: translateY(-5px); /* Slightly lift the card */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Add shadow to create a "lifted" effect */
+  cursor: pointer; /* Change cursor to indicate it's clickable */
+}

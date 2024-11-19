@@ -1,7 +1,7 @@
 <div class="container">
 <%= form_with(model: article) do |form| %>
   
-    <!-- Title Field -->
+  <!-- Article Title -->
   <div class="mb-3">
     <%= form.label :title, class: "form-label" %>
     <%= form.text_field :title, class: "form-control" %>
@@ -10,7 +10,7 @@
     <% end %>
   </div>
 
-  <!-- Body Field -->
+  <!-- Body -->
   <div class="mb-3">
     <%= form.label :body, class: "form-label" %>
     <%= form.text_area :body, class: "form-control", rows: 5 %>
@@ -19,25 +19,25 @@
     <% end %>
   </div>
 
-  <!-- Category Field -->
+  <!-- Category -->
   <div class="mb-3">
     <%= form.label :category_id, "Category", class: "form-label" %>
     <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: "Select a category" }, class: "form-select" %>
   </div>
 
-  <!-- Author Field -->
+  <!-- Author -->
   <div class="mb-3">
     <%= form.label :author_id, "Author", class: "form-label" %>
     <%= form.collection_select :author_id, Author.all, :id, :name, { prompt: "Select an author" }, class: "form-select" %>
   </div>
 
-  <!-- Status Field -->
+  <!-- Status -->
   <div class="mb-3">
     <%= form.label :status, class: "form-label" %>
     <%= form.select :status, Visible::VALID_STATUSES, { selected: article.status || 'public' }, class: "form-select" %>
   </div>
 
-  <!-- Submit Button -->
+  <!-- Submit -->
   <div class="mb-3">
     <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>
