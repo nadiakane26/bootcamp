@@ -41,9 +41,9 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-    redirect_to categories_path, status: :see_other
+    redirect_to @category, status: :see_other
   end
-
+q
   private
   def category_params
     params.expect(category: [:name, :description, :image])

@@ -12,12 +12,9 @@
       </p>
 
       <!-- Delete Button -->
-      <%= link_to "Delete Comment", [comment.article, comment], 
-                  class: "btn btn-danger btn-sm", 
-                  data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
+      <%= button_to "Delete", @comment, method: :delete, class: "btn btn-danger btn-sm mx-1" %>
+
+    
     </div>
   </div>
 <% end %>

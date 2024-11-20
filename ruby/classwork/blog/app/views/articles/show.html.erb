@@ -15,20 +15,21 @@
     <div id="main-content">
       <!-- Article Body -->
       <div class="row">
-        <div class="col-12">
+        <div class="col">
           <p class="lead"><%= @article.body %></p>
         </div>
       </div>
 
       <!-- Comments -->
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-lg-6">
           <h2>Comments</h2>
           <%= render @article.comments %>
         </div>
-  
-        <!-- Leave a Comment -->
-        <div class="col-md-6">
+        <div class="col-md-auto">
+        </div>
+        
+        <div class="col-lg-5 ">
           <div class="leave-comment">
             <h2>Leave a Comment:</h2>
             <%= render "comments/form", article: @article %>
@@ -42,7 +43,7 @@
       <div class="col-12 text-center">
         <button type="button" class="btn btn-primary btn-sm mx-1" id="toggle">Hide</button>
         <%= link_to "Edit", edit_article_path(@article), class: "btn btn-secondary btn-sm mx-1" %>
-       <%= button_to "Delete", @article, method: :delete, class: "btn btn-danger btn-sm mx-1",  
+        <%= button_to "Delete", @article, redirect_to: @articles, method: :delete, class: "btn btn-danger btn-sm mx-1",  
                 form: { style: "display: inline;" }  %>
       </div>
     </div>
