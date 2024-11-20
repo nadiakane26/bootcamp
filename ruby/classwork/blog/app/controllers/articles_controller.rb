@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
-  
+  before_action :authenticate_user!, except: [:index, :show]
   
   def index
     @articles = Article.all
@@ -18,7 +17,6 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      flash[:notice] = "Article was successfully created."
       redirect_to @article
     else
       render :new, status: :unprocessable_entity
@@ -33,7 +31,6 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if @article.update(article_params)
-      flash[:notice] = "Article was successfully updated."
       redirect_to @article
     else
       render :edit, status: :unprocessable_entity

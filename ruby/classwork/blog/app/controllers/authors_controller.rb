@@ -25,31 +25,34 @@ class AuthorsController < ApplicationController
   # POST /authors or /authors.json
   def create
     @author = Author.new(author_params)
-
     respond_to do |format|
       if @author.save
-        flash[:notice] = "Author was successfully created."
-      redirect_to @author
+        format.html { redirect_to @author, notice: "Author was successfully created." }
+        format.json { render :show, status: :ok, location: @author }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @author.errors, status: :unprocessable_entity }
+      format.json { render json: @author.errors, status: :unprocessable_entity }
+        
       end
-    end
+      @author.image.attach(params[:image])
   end
+end
 
   # PATCH/PUT /authors/1 or /authors/1.json
   def update
     @author = Author.find(params[:id]) 
+
     respond_to do |format|
       if @author.update(author_params)
-        flash[:notice] = "Author was successfully updated."
-        redirect_to @author
+      format.html { redirect_to @author, notice: "Author was successfully updated." }
+      format.json { render :show, status: :ok, location: @author }
       else
-        render :edit
+        format.html { render :edit, status: :unprocessable_entity }
+      format.json { render json: @author.errors, status: :unprocessable_entity }
       end
-    end
   end
-
+end
+  
   def destroy
     @author = Author.find(params[:id])
     @author.destroy

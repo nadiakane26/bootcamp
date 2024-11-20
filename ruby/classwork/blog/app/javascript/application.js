@@ -5,6 +5,4 @@ import "controllers"
 //= require jquery
 //= require bootstrap-sprockets
 
-import { Turbo } from "@hotwired/turbo-rails";
-
 import {loadStripe} from '@stripe/stripe-js';

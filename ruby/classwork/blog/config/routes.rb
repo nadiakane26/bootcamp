@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get "donations/new"
-  get "donations/create"
+  devise_for :users, controllers: { confirmations: 'confirmations' }
   resources :authors
   root "pages#home"
-
 
   # Health check route
   get "up" => "rails/health#show", as: :rails_health_check

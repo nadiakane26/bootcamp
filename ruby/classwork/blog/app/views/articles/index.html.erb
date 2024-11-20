@@ -1,4 +1,10 @@
-<p style="color: green"><%= notice %></p>
+<% if user_signed_in? %>
+<%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+<% else %>
+<%= button_to "Sign In" , user_session_path %>
+<% end %>
+
+
 
 <div class="container">
   <div class="bg-light py-5 mb-4">
