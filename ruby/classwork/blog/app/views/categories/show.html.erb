@@ -11,10 +11,8 @@
   <div class="row mt-3">
     <div class="col-12 text-center">
       <%= link_to "Edit", edit_category_path(@category), class: "btn btn-secondary btn-sm mx-1" %> 
-      <%= link_to "Delete", category_path(@category), class: "btn btn-danger btn-sm mx-1", data: { 
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
-      } %>
+      <%= button_to "Delete", @category, method: :delete, class: "btn btn-danger btn-sm mx-1",  
+                form: { style: "display: inline;" }  %>
     </div>
   </div>
 

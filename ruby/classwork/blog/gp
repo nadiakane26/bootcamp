@@ -1,3 +1,3 @@
 git add -A 
-git commit -m "Sign In/Out/Up & Edit Working "
+git commit -m "Fixed Delete Author, Article, Category bug, No more turbo "
 git push origin main 

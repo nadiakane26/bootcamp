@@ -42,10 +42,8 @@
       <div class="col-12 text-center">
         <button type="button" class="btn btn-primary btn-sm mx-1" id="toggle">Hide</button>
         <%= link_to "Edit", edit_article_path(@article), class: "btn btn-secondary btn-sm mx-1" %>
-        <%= link_to "Delete Article", article_path(@article), class: "btn btn-danger btn-sm mx-1", data: { 
-                          turbo_method: :delete,
-                          turbo_confirm: "Are you sure?"
-                        } %>
+       <%= button_to "Delete", @article, method: :delete, class: "btn btn-danger btn-sm mx-1",  
+                form: { style: "display: inline;" }  %>
       </div>
     </div>
   </div>

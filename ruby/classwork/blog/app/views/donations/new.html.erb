@@ -14,6 +14,12 @@
     <%= form.hidden_field :csrf_token, value: form_authenticity_token %> <!-- Ensure the CSRF token is included -->
 
     <div class="mb-3">
+      <%= form.label :email, "Email:", class: "form-label" %>
+      <%= form.email_field :email, autofocus: true, autocomplete: "email" , class: "form-control"%>
+    </div>
+
+
+    <div class="mb-3">
       <%= form.label :amount, "Donation Amount:", class: "form-label" %>
       <%= form.number_field :amount, min: 1, required: true, class: "form-control" %>
     </div>

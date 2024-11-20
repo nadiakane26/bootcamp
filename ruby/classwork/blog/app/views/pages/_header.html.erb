@@ -22,17 +22,26 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
               <li class="nav-item">
-                <%= button_to "Edit Profile", edit_user_registration_path, class: "nav-link" %>
+                <%= button_to edit_user_registration_path, method: :get, class: "nav-link" do%>
+                <i class="fas fa-pen-to-square"></i> Edit Profile
+                <% end %>
               </li>
               <li class="nav-item">
-                <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                <%= button_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+                <i class="fas fa-right-from-bracket"></i> Sign Out
+                <% end %>
+
               </li>
             <% else %>
               <li class="nav-item">
-                <%= button_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+                <%= button_to new_user_registration_path, method: :get, class: "nav-link" do%>
+                <i class="fa-solid fa-user"></i> Sign Up
+                <% end %>
               </li>
               <li class="nav-item">
-                <%= button_to "Sign In", new_user_session_path, class: "nav-link" %>
+                <%= button_to new_user_session_path, class: "nav-link" do%>
+                <i class="fa-solid fa-right-to-bracket"></i> Sign In
+                <% end %>
               </li>
             <% end %>
       </ul>
