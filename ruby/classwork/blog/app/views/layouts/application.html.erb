@@ -20,9 +20,10 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 <!-- JavaScript -->
-<%= javascript_importmap_tags %> <!-- Ensure this is before any module scripts -->
-<%= javascript_include_tag "turbo", type: "module" %>
+<%= javascript_importmap_tags %>
 <script src="https://js.stripe.com/v3/"></script>
+<%= javascript_include_tag "turbo", type: "module" %> <!--Donate page won't load Stripe with this -->
+
 </head>
   <body>
     <%= render "pages/header" %>
