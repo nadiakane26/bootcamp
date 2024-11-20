@@ -2,7 +2,5 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-//= require jquery
-//= require bootstrap-sprockets
 
 import {loadStripe} from '@stripe/stripe-js';
