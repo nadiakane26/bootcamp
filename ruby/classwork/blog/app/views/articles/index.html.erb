@@ -4,7 +4,7 @@
       <h1 class="display-4">Articles</h1>
       <p class="lead">Click on an article to read more or create a new one.</p>
       <hr class="my-4">
-      <p class="lead">Our blog has <%= Article.public_count %> articles and counting!</p>
+      <p class="lead">Our blog has <%= Article.count %> articles and counting!</p>
       <p>
         <%= link_to "Create a New Article", new_article_path, class: "btn btn-primary btn-lg" %>
       </p>

@@ -26,6 +26,7 @@
 </head>
   <body>
     <%= render "pages/header" %>
+    <div class="container">
       <!-- Display the notice message -->
       <%if notice %>
       <%= render 'layouts/alerts' %>
@@ -33,6 +34,7 @@
       
       <%= yield %>
       <%= yield :javascript%>
+    </div>
     </div>
 
 </body>

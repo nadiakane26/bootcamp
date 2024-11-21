@@ -43,7 +43,7 @@ class CategoriesController < ApplicationController
     @category.destroy
     redirect_to @category, status: :see_other
   end
-q
+
   private
   def category_params
     params.expect(category: [:name, :description, :image])
