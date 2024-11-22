@@ -1,5 +1,6 @@
-<%= form_with model: [ article, article.comments.build ] do |form| %>
-<div class="mb-3">
+<!-- prevent the default form submission -->
+<%= form_with(model: [article, article.comments.build], local: false, html: { id: 'comment-form' }) do |form| %>
+  <div class="mb-3">
     <!-- Commenter Field -->
     <%= form.label :commenter, "Name", class: "form-label" %>
     <%= form.text_field :commenter, class: "form-control" %>
