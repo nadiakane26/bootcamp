@@ -47,7 +47,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_20_050645) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
     t.bigint "category_id"
     t.bigint "author_id"
     t.index ["author_id"], name: "index_articles_on_author_id"
@@ -75,7 +74,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_20_050645) do
     t.bigint "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 

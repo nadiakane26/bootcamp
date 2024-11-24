@@ -31,12 +31,6 @@
     <%= form.collection_select :author_id, Author.all, :id, :name, { prompt: "Select an author" }, class: "form-select" %>
   </div>
 
-  <!-- Status -->
-  <div class="mb-3">
-    <%= form.label :status, class: "form-label" %>
-    <%= form.select :status, Visible::VALID_STATUSES, { selected: article.status || 'public' }, class: "form-select" %>
-  </div>
-
   <!-- Submit -->
   <div class="mb-3">
     <%= form.submit "Submit", class: "btn btn-primary" %>

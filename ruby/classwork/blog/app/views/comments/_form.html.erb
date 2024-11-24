@@ -12,12 +12,6 @@
     <%= form.text_area :body, class: "form-control", rows: 4 %>
   </div>
 
-  <div class="mb-3">
-    <!-- Status Field -->
-    <%= form.label :status, class: "form-label" %>
-    <%= form.select :status, Visible::VALID_STATUSES, { selected: 'public' }, class: "form-select" %>
-  </div>
-
   <div>
     <!-- Submit Button -->
     <%= form.submit "Post Comment", class: "btn btn-primary" %>

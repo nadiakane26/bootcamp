@@ -13,7 +13,6 @@
   <!-- Display articles in a grid layout -->
   <div class="row">
     <% @articles.each do |article| %>
-      <% unless article.archived? %>
         <div class="col-md-4 mb-4">
           <!-- Cards with a equal height -->
           <div class="card d-flex flex-column h-100 article-card">
@@ -45,7 +44,6 @@
             </div>
           </div>
         </div>
-      <% end %>
     <% end %>
   </div>
 </div>

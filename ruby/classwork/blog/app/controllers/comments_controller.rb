@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:destroy]
-  
+
     def create
       @article = Article.find(params[:article_id])
       @comment = @article.comments.create(comment_params)
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
   
     private
       def comment_params
-        params.expect(comment: [:commenter, :body, :status])
+        params.expect(comment: [:commenter, :body])
       end
   end
   
