@@ -26,9 +26,10 @@
     <h2>Comments</h2>
     <!-- Container for dynamically loaded comments -->
     <div id="comments">
-      <%= render @article.comments %> <!-- Initial comments rendered here -->
+      <%= render @article.comments %> 
     </div>
-    // <%= debug(@article.category) %>
+   
+
     <button id="load-comments" 
         data-article="<%= @article.id %>" 
         data-category="<%= @article.category.id %>" 
@@ -51,9 +52,9 @@
     <!-- Buttons Section -->
     <div class="row mt-3">
       <div class="col-12 text-center">
-        <button type="button" class="btn btn-primary btn-sm mx-1" id="toggle">Hide Content</button>
-        <%= link_to "Edit", edit_article_path(@article), class: "btn btn-secondary btn-sm mx-1" %>
-        <%= button_to "Delete", @article, redirect_to: @articles, method: :delete, class: "btn btn-danger btn-sm mx-1",  
+        <button type="button" class="btn btn-primary btn-sm" id="toggle">Hide Content</button>
+        <%= link_to "Edit", edit_article_path(@article), class: "btn btn-secondary btn-sm" %>
+        <%= button_to "Delete", @article, redirect_to: @articles, method: :delete, class: "btn btn-danger btn-sm",  
                 form: { style: "display: inline;" }  %>
       </div>
     </div>

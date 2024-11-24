@@ -1,45 +1,47 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-     <%= link_to "Home", root_path, class: "navbar-brand "%>
+     <%= link_to "Home", root_path, class: "navbar-brand #{'active' if current_page?(root_path)}"%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
       <li class="nav-item">
-      <%= link_to "Categories", categories_path, class: "nav-link active"%>
+      <%= link_to "Categories", categories_path, class: "nav-link #{'active' if current_page?(categories_path)}"%>
     </li>
     <li class="nav-item">
-      <%= link_to "Articles", articles_path, class: "nav-link active"%>
+      <%= link_to "Articles", articles_path, class: "nav-link #{'active' if current_page?(articles_path)}"%>
     </li>
     <li class="nav-item">
-      <%= link_to "Authors", authors_path, class: "nav-link active"%>
+      <%= link_to "Authors", authors_path, class: "nav-link #{'active' if current_page?(authors_path)}"%>
     </li>
     <li class="nav-item">
-      <%= link_to "Donate!", new_donation_path , class: "nav-link active"%>
+      <%= link_to "Donate!", new_donation_path , class: "nav-link #{'active' if current_page?(new_donation_path)}"%>
     </li>
       </ul>
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-              <li class="nav-item">
-                <%= button_to edit_user_registration_path, method: :get, class: "nav-link" do%>
-                <i class="fas fa-pen-to-square"></i> Edit Profile
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= button_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+        <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <%=current_user.username %>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><%= button_to edit_user_registration_path, method: :get, class: "dropdown-item" do%>
+              <i class="fas fa-pen-to-square"></i> Edit Profile
+              <% end %></li>
+              <li><%= button_to destroy_user_session_path, method: :delete, class: "dropdown-item"  do %>
                 <i class="fas fa-right-from-bracket"></i> Sign Out
-                <% end %>
-
-              </li>
+              <% end %></li>
+          </ul>
+   
             <% else %>
               <li class="nav-item">
-                <%= button_to new_user_registration_path, method: :get, class: "nav-link" do%>
+                <%= button_to new_user_registration_path, method: :get, class: "nav-link active" do%>
                 <i class="fa-solid fa-user"></i> Sign Up
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= button_to new_user_session_path, class: "nav-link" do%>
+                <%= button_to new_user_session_path, class: "nav-link active" do%>
                 <i class="fa-solid fa-right-to-bracket"></i> Sign In
                 <% end %>
               </li>

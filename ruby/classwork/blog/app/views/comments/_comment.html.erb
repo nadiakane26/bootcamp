@@ -4,6 +4,11 @@
       <!-- Commenter Name -->
       <h5 class="card-title">
         <%= comment.commenter %>
+        <i class="fas fa-clock fa-xs text-muted"></i> 
+        <!-- Display comment creation time -->
+        <small class="text-muted ml-1">
+          <%= time_ago_in_words(comment.created_at) %> ago
+        </small>
       </h5>
 
       <!-- Comment Body -->
@@ -11,11 +16,18 @@
         <%= comment.body %>
       </p>
 
-      <!-- Delete Button -->
-      <%= button_to "Delete", article_comment_path(@article, comment), method: :delete, class: "btn btn-danger btn-sm mx-1" %>
-
-    
+      <!-- Button Container -->
+      <div class="button-container d-flex align-items-center">
+        <!-- Delete Button -->
+        <%= button_to "Delete", article_comment_path(@article, comment), method: :delete, class: "btn btn-danger btn-sm me-2" %>
+        
+        <!-- Like Button -->
+        <button class="btn btn-primary btn-sm like-btn me-2" data-comment-id="<%= comment.id %>">
+          Like <i class="fa-regular fa-thumbs-up"></i>
+        </button>
+        <span class="like-count me-1" id="like-count-<%= comment.id %>">0</span> 
+  <span>Likes</span>
+      </div>
     </div>
   </div>
 <% end %>
-
