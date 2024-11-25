@@ -41,21 +41,22 @@ $(document).ready(function () {
 //         });
 // });
 
-$(document).ready(function() {
-    $('.like-btn').on('click', function() {
-      const commentId = $(this).data('comment-id');  // Get data attribute
-      const likeCountElement = $(`#like-count-${commentId}`);  // Select like count element
+// $(document).ready(function() {
+//     var counter = 0
+//     $('.like-btn').on('click', function() {
+//       const commentId = $(this).data('comment-id');  // Get data attribute
+//       const likeCountElement = $(`#like-count-${commentId}`);  // Select like count element
   
-      // Toggle "like" logic
-      if ($(this).hasClass('liked')) {
-        $(this).removeClass('liked');
-        $(this).html('Like <i class="fa-regular fa-thumbs-up"></i>');  
-        likeCountElement.text(parseInt(likeCountElement.text()) - 1);  // Update like count
-      } else {
-        $(this).addClass('liked');
-        $(this).html('Unlike');
-        likeCountElement.text(parseInt(likeCountElement.text()) + 1);  // Increment like count
-      }
-    });
-  });
+//       // Toggle "like" logic
+//       if ($(this).hasClass('liked')) {
+//         $(this).removeClass('liked');
+//         $(this).html('Like <i class="fa-regular fa-thumbs-up"></i>');  
+//         likeCountElement.text(parseInt(likeCountElement.text()) - 1);  // Update like count
+//       } else {
+//         $(this).addClass('liked');
+//         $(this).html('Unlike');
+//         likeCountElement.text(parseInt(likeCountElement.text()) + 1);  // Increment like count
+//       }
+//     });
+//   });
   

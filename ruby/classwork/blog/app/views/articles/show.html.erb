@@ -25,17 +25,11 @@
   <div class="col-lg-6">
     <h2>Comments</h2>
     <!-- Container for dynamically loaded comments -->
-    <div id="comments">
+    <div id="comments" >
       <%= render @article.comments %> 
     </div>
-   
-
-    <button id="load-comments" 
-        data-article="<%= @article.id %>" 
-        data-category="<%= @article.category.id %>" 
-        class="btn btn-primary">
-  Load More Comments
-</button>
+    <button type ="button"
+        class="btn btn-primary"> Load More Comments </button>
   </div>
   <div class="col-md-auto">
   </div>
