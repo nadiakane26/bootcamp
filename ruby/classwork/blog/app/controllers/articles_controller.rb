@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @comments = @article.comments.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    @comments = @article.comments.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
     
     respond_to do |format|
       format.html # Regular HTML request
@@ -58,6 +58,8 @@ class ArticlesController < ApplicationController
 
     redirect_to @article, status: :see_other
   end
+
+
 
   private
     def article_params

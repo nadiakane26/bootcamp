@@ -20,6 +20,7 @@
         </div>
       </div>
 
+      <!-- Comments -->
       <div class="row">
       <div class="col-lg-6">
       <h2>Comments</h2>
@@ -33,7 +34,7 @@
           <%= link_to 'Load More', article_path(@article, page: @comments.next_page), remote: true, id: 'load-more-comments', class: 'btn btn-primary' %>
         </div>
       <% end %>
-    </div>
+  </div>
 
   <div class="col-md-auto">
   </div>

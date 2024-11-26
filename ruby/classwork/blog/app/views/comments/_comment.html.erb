@@ -21,14 +21,7 @@
         <!-- Delete Button -->
         <%= button_to "Delete", article_comment_path(@article, comment), method: :delete, class: "btn btn-danger btn-sm me-2" %>
         
-        <!-- Like Button -->
-      <%= button_to 'Like', like_article_comment_path(@article, comment), method: :put, remote: true, class: "btn btn-primary btn-sm like-btn me-2", id: "like-btn-#{comment.id}" %>
 
-      <!-- Like Count -->
-      <span class="like-count me-1" id="like-count-<%= comment.id %>">
-       0
-      </span>
-      <span>Likes</span>
       </div>
     </div>
   </div>

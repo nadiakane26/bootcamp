@@ -11,11 +11,7 @@ Rails.application.routes.draw do
 
   # Comments are nested under articles
   resources :articles do
-    resources :comments, only: [:create, :destroy] do
-      member do 
-        put "like" => "comments#like"
-      end
-    end
+    resources :comments
   end
 
   resources :donations, only: [:new, :create]
