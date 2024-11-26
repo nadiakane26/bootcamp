@@ -1,7 +1,8 @@
 class DonationsController < ApplicationController
   def new
   end
-
+  
+  
   def create
     Stripe::PaymentIntent.create({
       amount: (params[:amount].to_i * 100), # Amount in cents

@@ -20,8 +20,11 @@
       <div class="button-container d-flex align-items-center">
         <!-- Delete Button -->
         <%= button_to "Delete", article_comment_path(@article, comment), method: :delete, class: "btn btn-danger btn-sm me-2" %>
-        
-
+        <!-- Like Button -->
+        <%= link_to like_article_comment_path(@article, comment), method: :put, remote: true, class: "btn btn-primary btn-sm like-btn me-2", id: "like-btn-#{comment.id}", data: { comment_id: comment.id } do %>
+        Like <i class="fa-regular fa-thumbs-up"></i>
+      <% end %>     <!-- Like Count -->
+      <span id="like-count-<%= comment.id %>"><%= comment.likes.count %></span> Likes
       </div>
     </div>
   </div>

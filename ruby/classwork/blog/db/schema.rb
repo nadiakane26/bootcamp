@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_25_194949) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_26_154729) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -83,6 +83,16 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_25_194949) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "comment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_likes_on_comment_id"
+    t.index ["user_id", "comment_id"], name: "index_likes_on_user_id_and_comment_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -110,4 +120,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_25_194949) do
   add_foreign_key "articles", "authors"
   add_foreign_key "articles", "categories"
   add_foreign_key "comments", "articles"
+  add_foreign_key "likes", "comments"
+  add_foreign_key "likes", "users"
 end

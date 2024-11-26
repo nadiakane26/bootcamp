@@ -11,8 +11,14 @@ Rails.application.routes.draw do
 
   # Comments are nested under articles
   resources :articles do
-    resources :comments
+    resources :comments do
+      member do
+        put 'like'   # This route will handle liking a specific comment
+      end
+    end
   end
+
+  resource :likes, only: [:create, :destroy]
 
   resources :donations, only: [:new, :create]
 end 

@@ -27,27 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    # This is vanilla JS
+    $('#recurring-checkbox').on('change', function() {
+      if ($(this).is(':checked')) {
+        $('#recurring-description').show();
+      } else {
+        $('#recurring-description').hide();
+      }
+  
 
-    # const checkbox = document.getElementById('recurring-checkbox');
-    # const description = document.getElementById('recurring-description');
-
-    # checkbox.addEventListener('change', () => {
-    #   if (checkbox.checked) {
-    #     description.style.display = 'block';
-    #   } else {
-    #     description.style.display = 'none';
-    #   }
-    # });
-
-    # $('#recurring-checkbox').on('change', function() {
-    #   if ($(this).is(':checked')) {
-    #     $('#recurring-description').show();
-    #   } else {
-    #     $('#recurring-description').hide();
-    #   }
-
-
+});
   });
 
-
+  
