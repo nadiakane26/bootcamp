@@ -7,6 +7,12 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comments = @article.comments.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    
+    respond_to do |format|
+      format.html # Regular HTML request
+      format.js   # JavaScript request (for AJAX)
+    end
   end
 
   def new

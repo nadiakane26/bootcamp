@@ -72,7 +72,6 @@ GEM
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
       uri (>= 0.13.1)
-    acts_as_votable (0.14.0)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.2)
@@ -110,6 +109,8 @@ GEM
       warden (~> 1.2.3)
     drb (2.2.1)
     erubi (1.13.0)
+    faker (3.5.1)
+      i18n (>= 1.8.11, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.6)
@@ -218,8 +219,6 @@ GEM
     regexp_parser (2.9.2)
     reline (0.5.11)
       io-console (~> 0.5)
-    requestjs-rails (0.0.12)
-      railties (>= 6.1.0)
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
@@ -293,6 +292,9 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (4.0.1)
+    will_paginate-bootstrap (1.0.2)
+      will_paginate (>= 3.0.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.7.1)
@@ -306,18 +308,17 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  acts_as_votable
   bootsnap
   brakeman
   capybara
   debug
   devise (~> 4.9)
+  faker (~> 3.5)
   importmap-rails
   jbuilder
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 8.0.0)
-  requestjs-rails
   rubocop-rails-omakase
   selenium-webdriver
   sprockets-rails
@@ -326,6 +327,8 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
+  will_paginate (~> 4.0)
+  will_paginate-bootstrap (~> 1.0)
 
 BUNDLED WITH
    2.5.16

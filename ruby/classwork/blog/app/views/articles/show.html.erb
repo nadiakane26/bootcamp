@@ -1,7 +1,6 @@
 <% content_for :javascript do %>
   <script type="module">
     import "add_jquery";
-    import "likes";
   </script>
   <% end %>
   
@@ -21,17 +20,21 @@
         </div>
       </div>
 
-      <!-- Comments -->
       <div class="row">
-  <div class="col-lg-6">
-    <h2>Comments</h2>
-    <!-- Container for dynamically loaded comments -->
-    <div id="comments" >
-      <%= render @article.comments %> 
+      <div class="col-lg-6">
+      <h2>Comments</h2>
+      <!-- Container for dynamically loaded comments -->
+      <div id="comments">
+        <%= render @comments %>
+      </div>
+    
+      <% if @comments.next_page %>
+        <div id="load-more-container">
+          <%= link_to 'Load More', article_path(@article, page: @comments.next_page), remote: true, id: 'load-more-comments', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
     </div>
-    <button type ="button"
-        class="btn btn-primary"> Load More Comments </button>
-  </div>
+
   <div class="col-md-auto">
   </div>
   
