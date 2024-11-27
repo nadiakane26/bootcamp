@@ -55,6 +55,3 @@ gem "faker", "~> 3.5"
 # Load more 
 gem "will_paginate", "~> 4.0"
 gem "will_paginate-bootstrap", "~> 1.0"
-
-
-gem "acts_as_votable", "~> 0.14.0"

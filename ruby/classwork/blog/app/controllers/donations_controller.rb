@@ -1,16 +1,9 @@
 class DonationsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
   def new
   end
-  
-  def create
-    if params[:recurring] == "true"
-      create_recurring_donation
-    else
-      create_one_time_donation
-    end
-  end
 
-  def create_one_time_donation
+  def create
     Stripe::PaymentIntent.create({
       amount: (params[:amount].to_i * 100), # Amount in cents
       currency: 'usd',
@@ -23,5 +16,4 @@ class DonationsController < ApplicationController
   rescue Stripe::CardError => e
     redirect_to new_donation_path, alert: e.message
   end
-  
 end
