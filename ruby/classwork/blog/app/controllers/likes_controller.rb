@@ -1,18 +1,18 @@
 class LikesController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, only: [:create, :destroy]
 
     def create
-      @article = Article.find(params[:article_id])
-      @comment = @article.comments.find(params[:comment_id])
+        @comment = Comment.find(params[:like][:comment_id])
+        @like = current_user.likes.new(comment: @comment)
+ 
   
-      # Create the like for the current user and the comment
-      @like = current_user.likes.new(comment: @comment)
-  
-      if @like.save
-        render json: { likes_count: @comment.likes.count, liked: true }, status: :ok
-      else
-        render json: { error: 'Unable to like comment' }, status: :unprocessable_entity
-      end
+        if @like.save
+          else
+            flash[:alert] = @like.errors.full_messages.to_sentence
+          end
+
+      redirect_to @comment.article
+        
     end
   
     def destroy
@@ -21,8 +21,8 @@ class LikesController < ApplicationController
   
       # Destroy the like
       @like.destroy
-  
-      render json: { likes_count: @comment.likes.count, liked: false }, status: :ok
+
+    redirect_to @comment.article 
     end
 
     private

@@ -7,7 +7,7 @@ class CreateLikes < ActiveRecord::Migration[8.0]
       t.timestamps
     end
 
-    # single like per user per comment
+    # uniqueness constraint a single like for a single user
     add_index :likes, [:user_id, :comment_id], unique: true
   end
 end
