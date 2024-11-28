@@ -20,10 +20,16 @@ $(document).ready(function () {
   $('#load-more-comments').click(function(e) {
     e.preventDefault();  // Prevent page refresh
 
-    // Get request the URL link that points to the next page
+    // Get request for the URL link that points to the next page
     $.get($(this).attr('href'), function(data) {
-        console.log(data)
-        // Finds the new comments in the data data 
+      
+        // console.log(data)
+    //     <div id="load-more-container">
+    //     <a id="load-more-comments" 
+    //     class="btn btn-primary" data-remote="true" 
+    //     href="/articles/10?page=5">Load More</a>
+    //   </div> 
+        // Finds the new comments in html format of the data  
       $('#comments').append($(data).find('#comments').html());  // Append new comments
       $('#load-more-container').replaceWith($(data).find('#load-more-container'));  // Update the "Load More" button
     })
