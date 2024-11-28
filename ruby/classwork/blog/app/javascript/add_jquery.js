@@ -20,8 +20,10 @@ $(document).ready(function () {
   $('#load-more-comments').click(function(e) {
     e.preventDefault();  // Prevent page refresh
 
-    // Get the URL link that points to the next page
+    // Get request the URL link that points to the next page
     $.get($(this).attr('href'), function(data) {
+        console.log(data)
+        // Finds the new comments in the data data 
       $('#comments').append($(data).find('#comments').html());  // Append new comments
       $('#load-more-container').replaceWith($(data).find('#load-more-container'));  // Update the "Load More" button
     })
@@ -29,5 +31,5 @@ $(document).ready(function () {
       $('#comments').append('<p class="error-message">Failed to load comments. Please try again later.</p>');
     });
   });
-  
+
   });
