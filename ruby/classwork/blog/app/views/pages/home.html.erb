@@ -1,3 +1,9 @@
+<% content_for :javascript do %>
+  <script type="module">
+    import "map";
+  </script>
+  <% end %>
+  
 <div class="container">
 
 <div class="bg-light py-5 mb-4">
@@ -7,6 +13,14 @@
   <hr class="my-4">
   
   <img src="https://images.pexels.com/photos/2739666/pexels-photo-2739666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid d-block mx-auto">
+
+  <div class="map-container">
+  <div id="map"></div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.application.credentials.google_api_key%>&callback=initMap">
+</script>
+
 </div>
 </div>
 </div>

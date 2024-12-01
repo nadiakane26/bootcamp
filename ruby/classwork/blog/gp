@@ -1,3 +1,3 @@
 git add -A 
-git commit -m "Minor modifications"
+git commit -m "Added Google Maps API - In Progress"
 git push origin main 

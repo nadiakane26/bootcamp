@@ -11,6 +11,7 @@ pin "article", to: 'article.js'
 
 pin "jquery", to: "https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
 pin "add_jquery", to: "add_jquery.js"
+pin "map", to: 'map.js'
 
 # Load more comments
 pin "@hotwired/stimulus", to: "stimulus.min.js" # Pin Stimulus

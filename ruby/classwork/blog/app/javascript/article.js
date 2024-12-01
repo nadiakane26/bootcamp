@@ -1,6 +1,6 @@
 // console.log("This is article.js")
 
-// Solution
+// Slide toggle Solution
 
 // Can't use jquery (yet)
 document.addEventListener("DOMContentLoaded", () => {
