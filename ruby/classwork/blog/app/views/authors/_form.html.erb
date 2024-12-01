@@ -13,10 +13,17 @@
   <div class="field">
   <%= form.label :image, class: "form-label"  %>
   <%= form.file_field :image, class: "form-control" %>
+  <% if @author.image.attached? %>
+  <%= image_tag @author.image %>
+      <p class="mt-2"><%= @author.image.filename.to_s %></p>
+    <% end %>
 </div>
 </div>
 
-<div class="mb-3">
-      <%= form.submit "Create Author", class: "btn btn-primary" %>
-    </div>
+<div class="mb-3"> 
+<% if @author.new_record? %>
+<%= form.submit "Create Author", class: "btn btn-primary"  %>
+<% else %>
+<%= form.submit "Update Author" ,class: "btn btn-primary"  %>
+<% end %>
 <% end %>

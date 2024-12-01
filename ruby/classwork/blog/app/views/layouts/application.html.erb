@@ -29,9 +29,13 @@
     <%= render "pages/header" %>
     <div class="container">
       <!-- Display the notice message -->
-      <%if notice %>
-      <%= render 'layouts/alerts' %>
+      <% flash.each do |key, message| %>
+        <div class="alert alert-<%= key == "alert" ? "danger" : "success" %> alert-dismissible fade show" role="alert">
+          <%= message %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
       <% end %>
+
       
       <%= yield %>
       <%= yield :javascript%>

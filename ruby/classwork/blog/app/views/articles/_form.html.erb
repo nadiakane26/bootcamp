@@ -1,4 +1,3 @@
-<div class="container">
 <%= form_with(model: article) do |form| %>
   
   <!-- Article Title -->
@@ -32,9 +31,11 @@
   </div>
 
   <!-- Submit -->
-  <div class="mb-3">
-    <%= form.submit "Submit", class: "btn btn-primary" %>
-  </div>
+  <div class="mb-3"> 
+  <% if @article.new_record? %>
+<%= form.submit "Create Article", class: "btn btn-primary"  %>
+<% else %>
+<%= form.submit "Update Article" ,class: "btn btn-primary"  %>
 <% end %>
 
-</div>
+<% end %>

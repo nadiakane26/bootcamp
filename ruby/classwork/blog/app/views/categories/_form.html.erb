@@ -25,7 +25,12 @@
   </div>
 
     <!-- Submit Button -->
-    <div class="mb-3">
-      <%= form.submit "Create Category", class: "btn btn-primary" %>
+
+    <div class="mb-3"> 
+      <% if @category.new_record? %>
+    <%= form.submit "Create Category", class: "btn btn-primary"  %>
+  <% else %>
+    <%= form.submit "Update Category" ,class: "btn btn-primary"  %>
+  <% end %>
     </div>
   <% end %>

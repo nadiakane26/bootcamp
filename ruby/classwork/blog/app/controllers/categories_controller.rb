@@ -47,8 +47,17 @@ end
 
   def destroy
     @category = Category.find(params[:id])
-    @category.destroy
-    redirect_to @category, status: :see_other
+
+    respond_to do |format|
+      if @category.destroy
+      format.html { redirect_to @category, notice: "Category was successfully deleted." }
+      format.json { render :show, status: :ok, location: @category }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+      format.json { render json: @category.errors, status: :unprocessable_entity }
+      end
+  end
+
   end
 
   private
