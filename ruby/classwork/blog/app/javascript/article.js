@@ -1,4 +1,4 @@
-// console.log("This is article.js")
+console.log("Using vanilla javascript")
 
 // Slide toggle Solution
 

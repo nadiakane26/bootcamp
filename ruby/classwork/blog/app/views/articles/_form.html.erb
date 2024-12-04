@@ -30,6 +30,12 @@
     <%= form.collection_select :author_id, Author.all, :id, :name, { prompt: "Select an author" }, class: "form-select" %>
   </div>
 
+  <!-- Google Maps Autocomplete -->
+  <div class="mb-3">
+    <%= form.label :location, "Location", class: "form-label" %>
+    <%= form.text_field :location, id: "autocomplete", class: "form-control", placeholder: "Enter a place" %>
+  </div>
+
   <!-- Submit -->
   <div class="mb-3"> 
   <% if @article.new_record? %>

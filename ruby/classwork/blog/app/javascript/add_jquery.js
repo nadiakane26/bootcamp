@@ -2,8 +2,7 @@
 // window.jQuery = jquery;
 // window.$ = jquery;
 
-import "add_jquery";
-
+console.log("Using jquery")
 $(document).ready(function () {
     // Slide Toggle 
     const toggleButton = $("#toggle");
